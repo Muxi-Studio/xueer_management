@@ -1,0 +1,41 @@
+{
+  "name": "xueer_management",
+  "version": "0.0.1",
+  "description": "the front end interface of xueer backend, powered by angularjs ",
+  "main": "src/index.js",
+  "title": "学而后端管理系统",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf build/* && webpack -p",
+    "devserver": "webpack-dev-server --port 9100 --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muxi-Studio/xueer_management.git"
+  },
+  "author": "Muxistudio FE Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muxi-Studio/xueer_management/issues"
+  },
+  "homepage": "https://github.com/Muxi-Studio/xueer_management#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^1.7.0",
+    "webpack": "^1.12.11",
+    "autoprefixer-loader": "^2.0.0",
+    "babel-core": "^5.2.9",
+    "babel-loader": "^5.0.0",
+    "css-loader": "^0.12.0",
+    "file-loader": "^0.8.1",
+    "html-loader": "^0.3.0",
+    "html-webpack-plugin": "^1.3.0",
+    "ng-annotate-loader": "~0.0.4",
+    "path": "^0.11.14",
+    "sass-loader": "^1.0.2",
+    "style-loader": "^0.12.1",
+    "webpack-dev-server": "^1.8.2"
+  },
+  "dependencies": {
+    "angular": "^1.4.8"
+  }
+}
