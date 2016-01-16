@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>{%= o.htmlWebpackPlugin.options.pkg.title %}</title>
-    </head>
-
-    <body ng-app="App">
-        Nothing here {{'yet' + '!'}}
-
-        {% for (var chunk in o.htmlWebpackPlugin.files) { %}
-        <script src="{%= o.htmlWebpackPlugin.files[chunk]%}"></script>
-        {% } %}
-    </body>
-
-    <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' built on ' + new Date() %} -->
-
+<!doctype html>
+<html ng-app="app" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular App</title>
+  <base href="/">
+</head>
+<body layout="row">
+	<md-sidenav class="md-sidenav-left side_nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+		<header class="side_nav_header">
+			
+		</header>
+		<nav class="side_nav_nav">
+			<md-list>
+				<md-list-item><a ui-sref="home">统计</a></md-list-item>
+				<md-list-item><a ui-sref="courses">课程</a></md-list-item>
+				<md-list-item><a ui-sref="home">评论</a></md-list-item>
+				<md-list-item><a ui-sref="home">用户</a></md-list-item>
+			</md-list>
+		</nav>
+	</md-sidenav>
+  <div class="container" flex>
+    <ui-view></ui-view>
+  </div>
+</body>
 </html>

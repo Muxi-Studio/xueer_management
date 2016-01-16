@@ -1,0 +1,18 @@
+/**
+ * app.css
+ * by zindex
+ */
+
+ /**
+  * side_nav
+  */
+ 
+.side_nav{
+	width: 240px;
+	background-color: #424242;
+}
+.side_nav_header{
+	padding: 16px;
+  height: 151px;
+  background-color: #263238;
+}
