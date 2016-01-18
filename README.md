@@ -1,3 +1,14 @@
-This is a demo project for [angular-tips](http://angular-tips.com).
+##Xueer_mangement
 
-Please go [here](https://github.com/Foxandxss/angular-webpack-workflow) to see the update workflow to use.
+学而管理后台
+
+
+###build
+
+`npm run build`
+
+###dev-server
+`npm run dev`
+
+###test
+`npm run test`
