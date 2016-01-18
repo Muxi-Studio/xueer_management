@@ -1,0 +1,34 @@
+/**
+ * course.css
+ * by zindex
+ */
+
+/**
+ * courses main
+ */
+.courses_main{
+	width: 100%;
+	padding-top: 20px;
+}
+
+/**
+ * courses_list
+ */
+.courses_table{
+	margin: 0 auto;
+}
+
+/**
+ * courses_add
+ */
+.courses_add_form{
+	display: block;
+	width: 300px;
+	margin: 0 auto;
+}
+.courses_add_item{
+	display: block;
+}
+.courses_add_item_select{
+	margin-bottom: 20px;
+}

@@ -220,7 +220,16 @@ module.exports = function makeWebpackConfig (options) {
       cached: false,
       colors: true,
       chunk: false
-    }
+    },
+    proxy: {
+            '/api/*': {
+                target: 'http://218.199.196.131',
+                secure: false,
+                pathRewrite: {
+                    '^/api' : ''
+                }
+            }
+        }
   };
 
   return config;

@@ -1,10 +1,20 @@
 export default function routes($stateProvider) {
   $stateProvider
     .state('courses', {
-      url: '/',
+      url: '/courses',
       template: require('./courses.html'),
-      controller: 'CoursesController',
-      controllerAs: 'courses',
+    })
+    .state('courses.list', {
+      url: '/list',
+      template: require('./courses.list.html'),
+      controller: 'CoursesListController',
+      controllerAs: 'coursesList',
+    })
+    .state('courses.add', {
+      url: '/add',
+      template: require('./courses.add.html'),
+      controller: 'CoursesAddController',
+      controllerAs: 'coursesAdd',
     })
 }
 

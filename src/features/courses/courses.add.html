@@ -1,0 +1,17 @@
+<form action="#" class="courses_add_form">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label courses_add_item">
+        <input class="mdl-textfield__input" type="text" id="title" ng-model="coursesAdd.course.title" required>
+        <label class="mdl-textfield__label" for="title">课程名</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label courses_add_item">
+        <input class="mdl-textfield__input" type="text" id="teacher" ng-model="coursesAdd.course.teacher" required>
+        <label class="mdl-textfield__label" for="teacher">教师</label>
+    </div>
+    <div>课程主分类</div>
+    <select class="courses_add_item courses_add_item_select" id="main_cat" ng-model="coursesAdd.course.main_cat" required>
+        <option value="公共课">公共课</option>
+        <option value="通识课">通识课</option>
+        <option value="专业课">专业课</option>
+    </select>
+    <div class="mdl-button mdl-js-button mdl-button--raised" ng-click="coursesAdd.submit()">提交</div>
+</form>

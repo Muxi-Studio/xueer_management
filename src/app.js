@@ -6,13 +6,13 @@
  */
 
 // import css
-import 'angular-material/angular-material.css'
+import 'material-design-lite/material.min.css'
 import './app.css'
 
 // import vendors
 import angular from 'angular'
 import angularUIRouter from 'angular-ui-router'
-import angularMaterial from 'angular-material'
+import 'material-design-lite/material.min'
 
 // import deps
 import routing from './app.config'
@@ -22,5 +22,5 @@ import courses from './features/courses'
 /**
  * app module
  */
-angular.module('app', [angularUIRouter, angularMaterial, home, courses])
+angular.module('app', [angularUIRouter, home, courses])
   .config(routing)

@@ -5,11 +5,7 @@
 export default class HomeController {
   constructor($http) {
     this.$http = $http
-    this.welcome = 'Hello, Worl'
-    $http.get('foo.json').success((data) => {
-      this.foo = data.foo
-      console.log(this.foo)
-    })
+    this.welcome = '主页！！'
   }
 }
 

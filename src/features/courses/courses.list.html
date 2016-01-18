@@ -1,0 +1,26 @@
+<table class="courses_table mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
+        <tr>
+            <th class="mdl-data-table__cell--non-numeric">选择</th>
+            <th>id</th>
+            <th>课程名</th>
+            <th>任课教师</th>
+            <th>评论数</th>
+            <th>课程类别</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="course in coursesList.courses">
+            <td class="mdl-data-table__cell--non-numeric">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                    <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+                </label>
+            </td>
+            <td>{{ course.id }}</td>
+            <td>{{ course.title }}</td>
+            <td>{{ course.teacher }}</td>
+            <td>{{ course.views }}</td>
+            <td>{{ course.main_cat }}</td>
+        </tr>
+    </tbody>
+</table>

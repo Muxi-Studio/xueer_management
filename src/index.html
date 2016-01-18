@@ -1,26 +1,51 @@
 <!doctype html>
-<html ng-app="app" lang="en">
+<html ng-app="app" lang="zh-cn">
 <head>
   <meta charset="UTF-8">
-  <title>Angular App</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学而-管理后台</title>
   <base href="/">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body layout="row">
-	<md-sidenav class="md-sidenav-left side_nav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-		<header class="side_nav_header">
-			
-		</header>
-		<nav class="side_nav_nav">
-			<md-list>
-				<md-list-item><a ui-sref="home">统计</a></md-list-item>
-				<md-list-item><a ui-sref="courses">课程</a></md-list-item>
-				<md-list-item><a ui-sref="home">评论</a></md-list-item>
-				<md-list-item><a ui-sref="home">用户</a></md-list-item>
-			</md-list>
-		</nav>
-	</md-sidenav>
-  <div class="container" flex>
-    <ui-view></ui-view>
-  </div>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+       <ui-view class="mdl-layout__content">
+					<div class="mdl-spinner mdl-js-spinner is-active"></div>
+       </ui-view>
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="http://7oxh2b.com1.z0.glb.clouddn.com/user.jpg" class="demo-avatar">
+          <div class="demo-avatar-dropdown">
+            <span>neo1218@yeah.com</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item">hello@example.com</li>
+              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" ui-sref="home"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>主页</a>
+          <a class="mdl-navigation__link" ui-sref="courses.list"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">school</i>课程</a>
+          <a class="mdl-navigation__link" ui-sref="home"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">comment</i>评论</a>
+          <a class="mdl-navigation__link" ui-sref="home"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>用户</a>
+          <a class="mdl-navigation__link" ui-sref="home"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">plus_one</i>运营</a>
+          <a class="mdl-navigation__link" ui-sref="home"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>设置</a>
+     
+        </nav>
+      </div>
+      
+       
+
+    </div>
+    
+
 </body>
 </html>
