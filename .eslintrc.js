@@ -13,5 +13,6 @@ module.exports = {
     beforeEach: 1,
     angular: 1,
     expect: 1,
+    componentHandler: 1,
   },
 }

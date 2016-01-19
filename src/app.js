@@ -15,6 +15,7 @@ import angularUIRouter from 'angular-ui-router'
 import 'material-design-lite/material.min'
 
 // import deps
+import AppController from './app.controller'
 import routing from './app.config'
 import home from './features/home'
 import courses from './features/courses'
@@ -24,3 +25,4 @@ import courses from './features/courses'
  */
 angular.module('app', [angularUIRouter, home, courses])
   .config(routing)
+  .controller('AppController', AppController)

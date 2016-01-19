@@ -14,8 +14,12 @@
 /**
  * courses_list
  */
-.courses_table{
+.courses_list{
+	width: 600px;
 	margin: 0 auto;
+}
+.courses_table{
+	width: 100%;
 }
 
 /**

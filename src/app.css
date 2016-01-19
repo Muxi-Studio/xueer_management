@@ -1,4 +1,25 @@
 /**
+ * reset CSS
+ */
+a{
+  text-decoration: none;
+}
+
+/**
+ * untility 
+ */
+
+.margin_r_10{
+  margin-right: 10px;
+}
+
+
+
+/**
+ * CSS in mdl template
+ */
+
+/**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
