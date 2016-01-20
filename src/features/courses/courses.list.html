@@ -20,12 +20,12 @@
                 <td>{{ course.teacher }}</td>
                 <td>{{ course.views }}</td>
                 <td>{{ course.main_cat }}</td>
-                <td>
-                    <a href="#">
+                <td class="courses_list_icon_edit">
+                    <a ui-sref="courses.update({ cid:course.id })">
                         <i class="material-icons" ng-show="course.focus">border_color</i>
                     </a>
                 </td>
-                <td>
+                <td class="courses_list_icon_delete">
                     <i class="material-icons"  ng-show="course.focus"
                     ng-click="coursesList.onDelete(course)">delete</i>
                 </td>

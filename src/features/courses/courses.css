@@ -21,7 +21,18 @@
 .courses_table{
 	width: 100%;
 }
-
+.courses_list_icon_edit a{
+	color:rgba(0,0,0,.87);
+}
+.courses_list_icon_edit a:hover{
+	color: #ff4081;
+}
+.courses_list_icon_delete i{
+	cursor: pointer;
+}
+.courses_list_icon_delete i:hover{
+	color: #ff4081;
+}
 /**
  * courses_add
  */

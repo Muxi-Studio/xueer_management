@@ -16,6 +16,12 @@ export default function routes($stateProvider) {
       controller: 'CoursesAddController',
       controllerAs: 'coursesAdd',
     })
+    .state('courses.update', {
+      url: '/update/:cid',
+      template: require('./courses.add.html'),
+      controller: 'CoursesUpdateController',
+      controllerAs: 'coursesUpdate',
+    })
 }
 
 routes.$inject = ['$stateProvider']
