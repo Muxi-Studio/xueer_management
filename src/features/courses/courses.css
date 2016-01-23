@@ -8,7 +8,11 @@
  */
 .courses_main{
 	width: 100%;
-	padding-top: 20px;
+	height: 99%;
+	box-sizing:border-box;
+	padding-top: 86px;
+	position: relative;
+	
 }
 
 /**
@@ -33,6 +37,19 @@
 .courses_list_icon_delete i:hover{
 	color: #ff4081;
 }
+
+/**
+ * dialog compomnent
+ */
+.courses_dialog{
+	width: 320px;
+  height: 320px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+}
+
 /**
  * courses_add
  */

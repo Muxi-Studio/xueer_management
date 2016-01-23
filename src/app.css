@@ -13,6 +13,18 @@ a{
   margin-right: 10px;
 }
 
+/**
+ * main layout
+ */
+.main_view{
+  height: 100%;
+}
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
 
 
 /**

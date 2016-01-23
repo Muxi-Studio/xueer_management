@@ -9,26 +9,28 @@ export default class CoursesAddController {
     this.$location = $location
   }
   vaildator() {
+    console.log(this.course)
     if (
       this.course.name &&
       this.course.teacher &&
-      this.course.credit &&
-      this.course.category_id &&
-      this.course.type_id &&
-      this.course.introduction) {
+      this.course.category_id) {
       return true
     }
     return false
+  }
+  parseData(){
+    this.course.category_id = parseInt(this.course.category_id)
   }
   submit() {
     if (!this.vaildator()) {
       return
     }
+    this.parseData()
     this.$http({
       method: 'POST',
       url: '/api/v1.0/courses/',
       headers: {
-        Authorization: 'Basic ZXlKaGJHY2lPaUpJVXpJMU5pSXNJbVY0Y0NJNk1UUTFNekkxTkRJM055d2lhV0YwSWpveE5EVXpNVFkzT0RjM2ZRLmV5SnBaQ0k2TVgwLko5QVVGZDllcWJhc2xXMFlaUUNUTV9ZY0pEeWJkdWFSb0hRblpPeEVhblE6',
+        Authorization: 'Basic ZXlKaGJHY2lPaUpJVXpJMU5pSXNJbVY0Y0NJNk1UUTFNell5TURVeU1Td2lhV0YwSWpveE5EVXpOVE0wTVRJeGZRLmV5SnBaQ0k2TW4wLnp1S0k5ZFdoOUFhNkFIMFJKLTloXzAtUTVZWlU3SkE4bmcweC1nVTJ0T2c6',
       },
       data: this.course,
     }).then((response) => {
