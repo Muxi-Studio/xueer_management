@@ -20,7 +20,7 @@ export default function routes($stateProvider) {
       url: '/update/:cid',
       template: require('./courses.add.html'),
       controller: 'CoursesUpdateController',
-      controllerAs: 'coursesUpdate',
+      controllerAs: 'coursesAdd',
     })
 }
 

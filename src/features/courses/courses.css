@@ -49,6 +49,10 @@
   left: 50%;
   transform:translate(-50%, -50%);
 }
+.courses_dialog_img{
+	background-image: url('http://7oxh2b.com1.z0.glb.clouddn.com/litte_man.png');
+	background-size: cover;
+}
 
 /**
  * courses_add

@@ -223,7 +223,7 @@ module.exports = function makeWebpackConfig (options) {
     },
     proxy: {
             '/api/*': {
-                target: 'http://218.199.196.131',
+                target: 'http://115.28.152.113:5000',
                 secure: false,
                 pathRewrite: {
                     '^/api' : ''
