@@ -21,7 +21,13 @@ export default class CoursesListController {
   }
   onDeleteConfirm() {
     const url = '/api/v1.0/courses/' + this.deleteId + '/'
-    this.$http.delete(url).then(() => {
+    this.$http({
+      method: 'DELETE',
+      url,
+      headers: {
+        Authorization: 'Basic eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1NDMyNDE1NCwiaWF0IjoxNDU0MjM3NzU0fQ.eyJpZCI6NX0.tfED8JWoBhp2go1lkwGJGM6JliKV5xpusrfqnHQkv4g',
+      },
+    }).then(() => {
       this.$state.go(this.$state.current, {}, {
         reload: true,
       })

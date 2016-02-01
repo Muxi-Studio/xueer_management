@@ -5,11 +5,10 @@
 export default class CoursesUpdateController {
   constructor($http, $state) {
     this.url = '/api/v1.0/courses/' + $state.params.cid + '/'
-    console.log($state.params.cid)
     this.course = {}
     this.$http = $http
+    this.$state = $state
     this.$http.get(this.url).then((response) => {
-      console.log(response.data)
       this.course.name = response.data.title
       this.course.teacher = response.data.teacher
     })
@@ -36,13 +35,11 @@ export default class CoursesUpdateController {
       method: 'PUT',
       url: this.url,
       headers: {
-        Authorization: 'Basic eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1MzgwNzQzOCwiaWF0IjoxNDUzNzIxMDM4fQ.eyJpZCI6Mn0.7W0-ucQ649EGzyFit9gFBN77NpqyKOj5rUJZrJKpGcI',
+        Authorization: 'Basic eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1NDMyNDE1NCwiaWF0IjoxNDU0MjM3NzU0fQ.eyJpZCI6NX0.tfED8JWoBhp2go1lkwGJGM6JliKV5xpusrfqnHQkv4g',
       },
       data: this.course,
     }).then(() => {
-      this.$state.go(this.$state.list, {}, {
-        reload: true,
-      })
+      this.$state.go('courses.list')
     }, function errorCallback(response) {
       if (response.status !== 200) {
         console.log('服务器出问题了')

@@ -1,6 +1,6 @@
 /**
  * index.js
- * the entry of course module
+ * the entry of courses module
  *
  * by zindex
  */
@@ -19,7 +19,7 @@ import CoursesAddController from './courses.add.controller'
 import CoursesUpdateController from './courses.update.controller'
 
 /**
- * home module
+ * courses module
  */
 export default angular.module('app.courses', [angularUIRouter])
   .config(routing)

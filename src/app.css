@@ -12,6 +12,23 @@ a{
 .margin_r_10{
   margin-right: 10px;
 }
+.m-t-20{
+  margin-top: 20px;
+}
+.m-b-5{
+  margin-bottom: 5px;
+}
+.p-20{
+  padding: 20px;
+}
+
+/**
+ * reset
+ */
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
 
 /**
  * main layout
@@ -24,6 +41,9 @@ a{
   top: 0;
   left: 0;
   z-index: 5;
+  padding-left: 200px;
+  width: 100%;
+  box-sizing:border-box;
 }
 
 

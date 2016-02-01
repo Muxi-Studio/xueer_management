@@ -1,0 +1,32 @@
+/**
+ * users.css
+ * by zindex
+ */
+
+/**
+ * users_main
+ */
+.users_main {
+    width: 100%;
+    height: 99%;
+    box-sizing: border-box;
+    padding-top: 65px;
+    position: relative;
+}
+.users_main_head{
+	height: 180px;
+}
+.users_main_head h3{
+	font-size: 23px;
+}
+
+/**
+ * users_list
+ */
+.users_content_table{
+	margin-top: -81px;
+	border-radius: 3px;
+}
+.users_content_table table{
+	width: 100%;
+}

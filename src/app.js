@@ -19,10 +19,11 @@ import AppController from './app.controller'
 import routing from './app.config'
 import home from './features/home'
 import courses from './features/courses'
+import users from './features/users'
 
 /**
  * app module
  */
-angular.module('app', [angularUIRouter, home, courses])
+angular.module('app', [angularUIRouter, home, courses, users])
   .config(routing)
   .controller('AppController', AppController)

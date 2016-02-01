@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --config webpack.build.js --bail -p",
     "prebuild": "rm -rf dist/*",
-    "dev": "node node_modules/.bin/webpack-dev-server --history-api-fallback --hot --inline --progress",
+    "dev": "node node_modules/.bin/webpack-dev-server --history-api-fallback --progress",
     "test": "karma start",
     "test:live": "karma start --auto-watch --no-single-run"
   },
