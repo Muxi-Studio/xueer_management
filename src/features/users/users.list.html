@@ -5,7 +5,11 @@
 </div>
 <div class="mdl-grid mdl-grid--no-spacing main_content">
     <div class="mdl-cell mdl-cell--3-col mdl-color--grey-100">
-        filter here
+        <select ng-model="usersList.roleId" 
+        ng-change="usersList.onRoleIdChange()">
+            <option value="2">管理员</option>
+            <option value="3">用户</option>
+        </select>
     </div>
     <div class="mdl-cell mdl-cell--9-col">
         <div class="main_content_table">

@@ -10,6 +10,12 @@ export default function routes($stateProvider) {
       controller: 'CoursesListController',
       controllerAs: 'coursesList',
     })
+    .state('courses.list.delete', {
+      url: '/delete/?cid&title',
+      template: require('../../components/dialog/dialog.html'),
+      controller: 'DialogDeleteController',
+      controllerAs: 'dialogDelete',
+    })
     .state('courses.add', {
       url: '/add',
       template: require('./courses.add.html'),

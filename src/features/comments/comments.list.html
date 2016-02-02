@@ -27,6 +27,13 @@
                         <td>{{ comment.body }}</td>
                         <td></td>
                     </tr>
+                    <tr ng-show="!commentsList.comments.length">
+                        <td>暂无评论</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -30,7 +30,7 @@ export default class CoursesAddController {
       method: 'POST',
       url: '/api/v1.0/courses/',
       headers: {
-        Authorization: 'Basic eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1NDMyNDE1NCwiaWF0IjoxNDU0MjM3NzU0fQ.eyJpZCI6NX0.tfED8JWoBhp2go1lkwGJGM6JliKV5xpusrfqnHQkv4g',
+        Authorization: 'Basic eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1NDQ4NTA1MSwiaWF0IjoxNDU0Mzk4NjUxfQ.eyJpZCI6NX0.TlPnW7qVSmJum90DFmiS2AS0vLOh3QDKmyZUm_iVNQY',
       },
       data: this.course,
     }).then((response) => {

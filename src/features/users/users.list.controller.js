@@ -7,7 +7,13 @@ export default class UsersListController {
     this.$http = $http
     this.$state = $state
     this.users = []
-    $http.get('/api/v1.0/users/').then((response) => {
+    this.roleId = '3'
+    this.$http.get('/api/v1.0/users/?roleid=' + this.roleId).then((response) => {
+      this.users = response.data
+    })
+  }
+  onRoleIdChange() {
+    this.$http.get('/api/v1.0/users/?roleid=' + this.roleId).then((response) => {
       this.users = response.data
     })
   }
