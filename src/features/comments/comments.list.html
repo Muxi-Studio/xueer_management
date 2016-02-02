@@ -1,6 +1,6 @@
 <div class="main_head mdl-color--blue-grey">
     <div class="p-20">
-        <h3 class="mdl-color-text--white m-t-20 m-b-5">用户列表</h3>
+        <h3 class="mdl-color-text--white m-t-20 m-b-5">评价列表</h3>
     </div>
 </div>
 <div class="mdl-grid mdl-grid--no-spacing main_content">
@@ -14,21 +14,17 @@
                     <tr>
                         <th>id</th>
                         <th>用户名</th>
-                        <th>邮箱</th>
-                        <th>QQ</th>
-                        <th>手机</th>
-                        <th>专业</th>
+                        <th>发布日期</th>
+                        <th>内容</th>
                         <th>删除</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="user in usersList.users">
-                        <td>{{ user.id }}</td>
-                        <td>{{ user.username }}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ user.qq }}</td>
-                        <td>{{ user.phone }}</td>
-                        <td>{{ user.major }}</td>
+                    <tr ng-repeat="comment in commentsList.comments">
+                        <td>{{ comment.id }}</td>
+                        <td>{{ comment.user_name }}</td>
+                        <td>{{ comment.date }}</td>
+                        <td>{{ comment.body }}</td>
                         <td></td>
                     </tr>
                 </tbody>

@@ -19,7 +19,7 @@
  * courses_list
  */
 .courses_list{
-	width: 600px;
+	width: 80%;
 	margin: 0 auto;
 }
 .courses_table{
@@ -28,15 +28,16 @@
 .courses_list_icon_edit a{
 	color:rgba(0,0,0,.87);
 }
-.courses_list_icon_edit a:hover{
+.courses_list_icon_edit a:hover,
+.courses_list_icon_delete i:hover,
+.courses_list_icon_comment i:hover{
 	color: #ff4081;
 }
-.courses_list_icon_delete i{
+.courses_list_icon_delete i,
+.courses_list_icon_comment i{
 	cursor: pointer;
 }
-.courses_list_icon_delete i:hover{
-	color: #ff4081;
-}
+
 
 /**
  * dialog compomnent

@@ -6,9 +6,11 @@
                 <th>课程名</th>
                 <th>任课教师</th>
                 <th>评论数</th>
-                <th>课程类别</th>
+                <th>主分类</th>
+                <th>二级分类</th>
                 <th>编辑</th>
                 <th>删除</th>
+                <th>评论</th>
             </tr>
         </thead>
         <tbody>
@@ -17,14 +19,18 @@
                 <td>{{ course.title }}</td>
                 <td>{{ course.teacher }}</td>
                 <td>{{ course.views }}</td>
-                <td>{{ course.main_cat }}</td>
+                <td>{{ course.main_category }}</td>
+                <td>{{ course.sub_category }}</td>
                 <td class="courses_list_icon_edit">
                     <a ui-sref="courses.update({ cid:course.id })">
                         <i class="material-icons" ng-show="course.focus">border_color</i>
                     </a>
                 </td>
                 <td class="courses_list_icon_delete">
-                    <i class="material-icons" ng-show="course.focus" ng-click="coursesList.onDelete(course)">delete</i>
+                    <i class="material-icons" ng-show="course.focus" ng-click="coursesList.onDeleteClick(course)">delete</i>
+                </td>
+                 <td class="courses_list_icon_comment">
+                    <i class="material-icons" ng-show="course.focus" ng-click="coursesList.onCommentClick(course.id)">comment</i>
                 </td>
             </tr>
         </tbody>

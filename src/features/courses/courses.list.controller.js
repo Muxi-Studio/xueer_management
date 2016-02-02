@@ -14,7 +14,7 @@ export default class CoursesListController {
       this.courses = response.data
     })
   }
-  onDelete(course) {
+  onDeleteClick(course) {
     this.deleteShow = true
     this.deleteId = course.id
     this.deleteDialogInfo.title = course.title
@@ -35,6 +35,9 @@ export default class CoursesListController {
   }
   onDeleteCancel() {
     this.deleteShow = false
+  }
+  onCommentClick(cid) {
+    this.$state.go('comments.list', { courseId: cid })
   }
 }
 
