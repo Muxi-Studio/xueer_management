@@ -8,7 +8,10 @@ export default class CoursesListController {
     this.courses = []
     this.$http = $http
     this.$state = $state
-    $http.get('/api/v1.0/courses/').then((response) => {
+    this.hasNext = false
+    this.pid = this.$state.params.page || 1
+    $http.get('/api/v1.0/courses/?page=' + this.pid).then((response) => {
+      this.hasNext = /<([\da-z.\/:?=]+)>; rel="next"/.test(response.headers('link'))
       this.courses = response.data
     })
   }
@@ -22,6 +25,17 @@ export default class CoursesListController {
     this.$state.go('comments.list', {
       courseId: cid,
     })
+  }
+  onNextClick() {
+    if (!this.$state.params.page) {
+      this.$state.go(this.$state.current, {
+        page: 2,
+      })
+    } else {
+      this.$state.go(this.$state.current, {
+        page: this.$state.params.page + 1,
+      })
+    }
   }
 }
 

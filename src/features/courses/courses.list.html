@@ -39,7 +39,7 @@
         <div class="mdl-cell mdl-cell--4-col">
         </div>
         <div class="mdl-cell mdl-cell--4-col">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <button ng-show="coursesList.hasNext" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="coursesList.onNextClick()">
                 下一页
             </button>
         </div>

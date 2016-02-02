@@ -5,7 +5,7 @@ export default function routes($stateProvider) {
       template: require('./courses.html'),
     })
     .state('courses.list', {
-      url: '/list',
+      url: '/list/?{page:int}',
       template: require('./courses.list.html'),
       controller: 'CoursesListController',
       controllerAs: 'coursesList',
