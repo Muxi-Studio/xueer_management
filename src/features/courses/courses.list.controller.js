@@ -17,8 +17,9 @@ export default class CoursesListController {
   }
   onDeleteClick(course) {
     this.$state.go('courses.list.delete', {
-      cid: course.id,
+      id: course.id,
       title: course.title,
+      type: 'courses',
     })
   }
   onCommentClick(cid) {

@@ -20,12 +20,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="comment in commentsList.comments">
+                    <tr ng-repeat="comment in commentsList.comments"
+                    ng-mouseenter="comment.focus ? (comment.focus = !comment.focus) : (comment.focus = true)" ng-mouseleave="comment.focus ? (comment.focus = !comment.focus) : (comment.focus = false)">
                         <td>{{ comment.id }}</td>
                         <td>{{ comment.user_name }}</td>
                         <td>{{ comment.date }}</td>
                         <td>{{ comment.body }}</td>
-                        <td></td>
+                        <td>
+                            <i class="material-icons" ng-show="comment.focus" 
+                            ng-click="commentsList.onDeleteClick(comment)">delete</i>
+                        </td>
                     </tr>
                     <tr ng-show="!commentsList.comments.length">
                         <td>暂无评论</td>
@@ -39,3 +43,4 @@
         </div>
     </div>
 </div>
+<div class="dialog" ui-view></div>

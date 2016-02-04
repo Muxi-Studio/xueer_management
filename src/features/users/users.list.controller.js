@@ -17,6 +17,13 @@ export default class UsersListController {
       this.users = response.data
     })
   }
+  onDeleteClick(user) {
+    this.$state.go('users.list.delete', {
+      id: user.id,
+      title: user.title,
+      type: 'users',
+    })
+  }
 }
 
 UsersListController.$inject = ['$http', '$state']

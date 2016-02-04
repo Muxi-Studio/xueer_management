@@ -3,10 +3,11 @@
  * by zindex
  */
 export default class CoursesAddController {
-  constructor($http, $location) {
+  constructor($http, $state, authService) {
     this.course = {}
     this.$http = $http
-    this.$location = $location
+    this.$state = $state
+    this.authService = authService
   }
   vaildator() {
     if (
@@ -25,16 +26,15 @@ export default class CoursesAddController {
       return
     }
     this.parseData()
-    console.log(this.course)
     this.$http({
       method: 'POST',
       url: '/api/v1.0/courses/',
       headers: {
-        Authorization: 'Basic eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1NDQ4NTA1MSwiaWF0IjoxNDU0Mzk4NjUxfQ.eyJpZCI6NX0.TlPnW7qVSmJum90DFmiS2AS0vLOh3QDKmyZUm_iVNQY',
+        Authorization: 'Basic ' + this.authService.getToken(),
       },
       data: this.course,
-    }).then((response) => {
-      this.$location.path('/courses/list')
+    }).then(() => {
+      this.$state.go('courses.list')
     }, function errorCallback(response) {
       if (response.status !== 200) {
         console.log('服务器出问题了')
@@ -43,4 +43,4 @@ export default class CoursesAddController {
   }
 }
 
-CoursesAddController.$inject = ['$http', '$location']
+CoursesAddController.$inject = ['$http', '$state', 'authService']

@@ -11,7 +11,7 @@ export default function routes($stateProvider) {
       controllerAs: 'coursesList',
     })
     .state('courses.list.delete', {
-      url: '/delete/?cid&title',
+      url: '/delete/?id&title&type',
       template: require('../../components/dialog/dialog.html'),
       controller: 'DialogDeleteController',
       controllerAs: 'dialogDelete',

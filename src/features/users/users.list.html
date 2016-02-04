@@ -26,17 +26,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="user in usersList.users">
+                    <tr ng-repeat="user in usersList.users" ng-mouseenter="user.focus ? (user.focus = !user.focus) : (user.focus = true)" ng-mouseleave="user.focus ? (user.focus = !user.focus) : (user.focus = false)">
                         <td>{{ user.id }}</td>
                         <td>{{ user.username }}</td>
                         <td>{{ user.email }}</td>
                         <td>{{ user.qq }}</td>
                         <td>{{ user.phone }}</td>
                         <td>{{ user.major }}</td>
-                        <td></td>
+                        <td>
+                            <i class="material-icons" ng-show="user.focus" 
+                            ng-click="usersList.onDeleteClick(user)">delete</i>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<div class="dialog" ui-view></div>

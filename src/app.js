@@ -22,9 +22,12 @@ import courses from './features/courses'
 import users from './features/users'
 import comments from './features/comments'
 
+// import service
+import authService from './services/auth.service'
+
 /**
  * app module
  */
-angular.module('app', [angularUIRouter, home, courses, users, comments])
+angular.module('app', [angularUIRouter, home, courses, users, comments, authService])
   .config(routing)
   .controller('AppController', AppController)

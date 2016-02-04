@@ -4,20 +4,21 @@
  */
 
 export default class DialogDeleteController {
-  constructor($state, $window, $rootScope, $http) {
+  constructor($state, $window, $rootScope, $http, authService) {
     this.$state = $state
     this.$window = $window
     this.$rootScope = $rootScope
     this.$http = $http
-    this.title = this.$state.params.title
+    this.authService = authService
+    this.title = this.$state.params.title || this.$state.params.id
   }
   onDeleteConfirm() {
-    const url = '/api/v1.0/courses/' + this.$state.params.cid + '/'
+    const url = '/api/v1.0/' + this.$state.params.type + '/' + this.$state.params.id + '/'
     this.$http({
       method: 'DELETE',
       url,
       headers: {
-        Authorization: 'Basic eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1NDQ4NTA1MSwiaWF0IjoxNDU0Mzk4NjUxfQ.eyJpZCI6NX0.TlPnW7qVSmJum90DFmiS2AS0vLOh3QDKmyZUm_iVNQY',
+        Authorization: 'Basic ' + this.authService.getToken(),
       },
     }).then(() => {
       console.log(this.$rootScope.previousState)
@@ -31,4 +32,4 @@ export default class DialogDeleteController {
   }
 }
 
-DialogDeleteController.$inject = ['$state', '$window', '$rootScope', '$http']
+DialogDeleteController.$inject = ['$state', '$window', '$rootScope', '$http', 'authService']

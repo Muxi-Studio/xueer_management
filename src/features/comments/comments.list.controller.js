@@ -11,6 +11,12 @@ export default class CommentsListController {
       this.comments = response.data
     })
   }
+  onDeleteClick(comment) {
+    this.$state.go('comments.list.delete', {
+      id: comment.id,
+      type: 'comments',
+    })
+  }
 }
 
 CommentsListController.$inject = ['$http', '$state']

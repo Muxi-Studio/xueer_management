@@ -10,6 +10,12 @@ export default function routes($stateProvider) {
       controller: 'CommentsListController',
       controllerAs: 'commentsList',
     })
+    .state('comments.list.delete', {
+      url: '/delete/?id&title&type',
+      template: require('../../components/dialog/dialog.html'),
+      controller: 'DialogDeleteController',
+      controllerAs: 'dialogDelete',
+    })
 }
 
 routes.$inject = ['$stateProvider']
