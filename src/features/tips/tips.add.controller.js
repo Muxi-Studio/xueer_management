@@ -2,41 +2,43 @@
  * courses.add.controller.js
  * by zindex
  */
-export default class CoursesAddController {
+// import vendors
+import Simditor from 'simditor'
+
+export default class TipsAddController {
   constructor($http, $state, authService) {
-    this.course = {}
+    this.tip = {}
     this.$http = $http
     this.$state = $state
     this.authService = authService
+    const editor = new Simditor({
+      textarea: document.querySelector("#body")
+    });
   }
   vaildator() {
     if (
-      this.course.name &&
-      this.course.teacher &&
-      this.course.category_id) {
+      this.tip.title &&
+      this.tip.author &&
+      this.tip.img_url &&
+      this.tip.body) {
       return true
     }
     return false
   }
-  parseData() {
-    //this.course.category_id = parseInt(this.course.category_id)
-    //this.course.sub_category_id = parseInt(this.course.sub_category_id)
-    //this.course.type_id = parseInt(this.course.type_id)
-  }
   submit() {
+    this.tip.body = document.querySelector("#body").value;
     if (!this.vaildator()) {
       return
     }
-    this.parseData()
     this.$http({
       method: 'POST',
-      url: '/api/v1.0/courses/',
+      url: '/api/v1.0/tips/',
       headers: {
         Authorization: 'Basic ' + this.authService.getToken(),
       },
-      data: this.course,
+      data: this.tip,
     }).then(() => {
-      this.$state.go('courses.list')
+      this.$state.go('tips.list')
     }, function errorCallback(response) {
       if (response.status !== 200) {
         console.log('服务器出问题了')
@@ -45,4 +47,4 @@ export default class CoursesAddController {
   }
 }
 
-CoursesAddController.$inject = ['$http', '$state', 'authService']
+TipsAddController.$inject = ['$http', '$state', 'authService']

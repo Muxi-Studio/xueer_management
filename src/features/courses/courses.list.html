@@ -8,6 +8,7 @@
                 <th>评论数</th>
                 <th>主分类</th>
                 <th>二级分类</th>
+                <th>学分类别</th>
                 <th>编辑</th>
                 <th>删除</th>
                 <th>评论</th>
@@ -21,6 +22,7 @@
                 <td>{{ course.views }}</td>
                 <td>{{ course.main_category }}</td>
                 <td>{{ course.sub_category }}</td>
+                <td>{{ course.type_id }}</td>
                 <td class="courses_list_icon_edit">
                     <a ui-sref="courses.update({ cid:course.id })">
                         <i class="material-icons" ng-show="course.focus">border_color</i>

@@ -1,0 +1,33 @@
+<div class="courses_list">
+    <table class="courses_table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">id</th>
+                <th>标题</th>
+                <th>作者</th>
+                <th>浏览量</th>
+                <th>点赞数</th>
+                <th>编辑</th>
+                <th>删除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="tip in tipsList.tips" ng-mouseenter="tip.focus ? (tip.focus = !tip.focus) : (tip.focus = true)" ng-mouseleave="tip.focus ? (tip.focus = !tip.focus) : (tip.focus = false)">
+                <td>{{ tip.id }}</td>
+                <td>{{ tip.title }}</td>
+                <td>{{ tip.author }}</td>
+                <td>{{ tip.views }}</td>
+                <td>{{ tip.likes }}</td>
+                <td class="courses_list_icon_edit">
+                    <a ui-sref="tips.update({ cid:tip.id })">
+                        <i class="material-icons" ng-show="tip.focus">border_color</i>
+                    </a>
+                </td>
+                <td class="courses_list_icon_delete">
+                    <i class="material-icons" ng-show="tip.focus" ng-click="tipsList.onDeleteClick(tip)">delete</i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="dialog" ui-view></div>

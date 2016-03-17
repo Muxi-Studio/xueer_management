@@ -7,7 +7,7 @@ export default class UsersListController {
     this.$http = $http
     this.$state = $state
     this.users = []
-    this.roleId = '3'
+    this.roleId = '1'
     this.$http.get('/api/v1.0/users/?roleid=' + this.roleId).then((response) => {
       this.users = response.data
     })

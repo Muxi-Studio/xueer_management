@@ -113,7 +113,9 @@ p {
     width: 100%;
     box-sizing: border-box;
 }
-
+#token{
+    display: none;
+}
 
 /**
  * CSS in mdl template

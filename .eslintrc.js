@@ -16,3 +16,4 @@ module.exports = {
     componentHandler: 1,
   },
 }
+

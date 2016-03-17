@@ -11,17 +11,23 @@
     <select class="courses_add_item courses_add_item_select" 
     id="main_cat" ng-model="coursesAdd.course.category_id" convert-to-number required >
         <option value="1">公共课</option>
-        <option value="3">通识课</option>
-        <option value="4">专业课</option>
-        <option value="2">素质课</option>
+        <option value="2">通识课</option>
+        <option value="3">专业课</option>
+        <option value="4">素质课</option>
+    </select>
+    <div>二级分类</div>
+    <select class="courses_add_item courses_add_item_select" id="sub_cat" 
+    ng-model="coursesAdd.course.sub_category_id" convert-to-number required>
+        <option value="1">通识核心课</option>
+        <option value="2">通识选修课</option>
     </select>
     <div>通识学分类别</div>
     <select class="courses_add_item courses_add_item_select" id="type_id" 
-    ng-bind="coursesAdd.course.type_id" required>
+    ng-model="coursesAdd.course.type_id" convert-to-number required>
         <option value="1">理科</option>
         <option value="2">文科</option>
         <option value="3">艺体</option>
-        <option value="4">工科</option>
+        <option value="4">教育</option>
     </select>
     <div class="mdl-button mdl-js-button mdl-button--raised" ng-click="coursesAdd.submit()">提交</div>
 </form>

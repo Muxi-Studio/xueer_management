@@ -6,7 +6,7 @@ var autoprefixer = require('autoprefixer-core');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = function makeWebpackConfig (options) {
+module.exports = function makeWebpackConfig(options) {
   /**
    * Environment type
    * BUILD is for generating minified builds
@@ -51,7 +51,7 @@ module.exports = function makeWebpackConfig (options) {
 
       // Output path from the view of the page
       // Uses webpack-dev-server in development
-      publicPath: BUILD ? '/' : 'http://localhost:8080/',
+      publicPath: BUILD ? 'http://guisheng.net/uploads/xueer_man/' : 'http://localhost:8080/',
 
       // Filename for entry points
       // Only adds hash in build mode
@@ -219,18 +219,18 @@ module.exports = function makeWebpackConfig (options) {
       modules: false,
       cached: false,
       colors: true,
-      chunk: false
+      chunk: false,
     },
     proxy: {
-            '/api/*': {
-                target: 'http://115.28.152.113:5000',
-                secure: false,
-                pathRewrite: {
-                    '^/api' : ''
-                }
-            }
-        }
-  };
+      '/api/*': {
+        target: 'http://121.41.6.148:5050',
+        secure: false,
+        pathRewrite: {
+          '^/api': '',
+        },
+      },
+    },
+  }
 
-  return config;
-};
+  return config
+}
