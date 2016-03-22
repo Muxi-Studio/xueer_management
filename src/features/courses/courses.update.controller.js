@@ -3,12 +3,14 @@
  * by zindex
  */
 export default class CoursesUpdateController {
-  constructor($http, $state) {
+  constructor($http, $state,authService) {
     this.url = '/api/v1.0/courses/' + $state.params.cid + '/'
     this.course = {}
     this.$http = $http
     this.$state = $state
+    this.authService = authService
     this.$http.get(this.url).then((response) => {
+      console.log(response)
       this.course.name = response.data.title
       this.course.teacher = response.data.teacher
     })
@@ -22,20 +24,15 @@ export default class CoursesUpdateController {
     }
     return false
   }
-  parseData() {
-    this.course.category_id = parseInt(this.course.category_id)
-  }
   submit() {
     if (!this.vaildator()) {
       return
     }
-    this.parseData()
-    console.log(this.course)
     this.$http({
       method: 'PUT',
       url: this.url,
       headers: {
-        Authorization: 'Basic eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1NDMyNDE1NCwiaWF0IjoxNDU0MjM3NzU0fQ.eyJpZCI6NX0.tfED8JWoBhp2go1lkwGJGM6JliKV5xpusrfqnHQkv4g',
+        Authorization: 'Basic' + this.authService.getToken(),
       },
       data: this.course,
     }).then(() => {
@@ -48,4 +45,4 @@ export default class CoursesUpdateController {
   }
 }
 
-CoursesUpdateController.$inject = ['$http', '$state']
+CoursesUpdateController.$inject = ['$http', '$state','authService']
