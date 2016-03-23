@@ -10,7 +10,6 @@ export default class CoursesUpdateController {
     this.$state = $state
     this.authService = authService
     this.$http.get(this.url).then((response) => {
-      console.log(response)
       this.course.name = response.data.title
       this.course.teacher = response.data.teacher
     })
@@ -32,7 +31,7 @@ export default class CoursesUpdateController {
       method: 'PUT',
       url: this.url,
       headers: {
-        Authorization: 'Basic' + this.authService.getToken(),
+        Authorization: 'Basic ' + this.authService.getToken(),
       },
       data: this.course,
     }).then(() => {
