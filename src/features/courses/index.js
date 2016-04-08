@@ -17,6 +17,7 @@ import routing from './courses.routes'
 import CoursesListController from './courses.list.controller'
 import CoursesAddController from './courses.add.controller'
 import CoursesUpdateController from './courses.update.controller'
+import CoursesSearchController from './courses.search.controller'
 import DialogDeleteController from '../../components/dialog/dialog.delete.controller'
 
 /**
@@ -27,5 +28,6 @@ export default angular.module('app.courses', [angularUIRouter])
   .controller('CoursesListController', CoursesListController)
   .controller('CoursesAddController', CoursesAddController)
   .controller('CoursesUpdateController', CoursesUpdateController)
+  .controller('CoursesSearchController', CoursesSearchController)
   .controller('DialogDeleteController', DialogDeleteController)
   .name

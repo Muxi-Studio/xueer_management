@@ -67,7 +67,7 @@ module.exports = function makeWebpackConfig(options) {
    * Devtool
    * Reference: http://webpack.github.io/docs/configuration.html#devtool
    * Type of sourcemap to use per build type
-   */
+
   if (TEST) {
     config.devtool = 'inline-source-map';
   } else if (BUILD) {
@@ -75,7 +75,8 @@ module.exports = function makeWebpackConfig(options) {
   } else {
     config.devtool = 'eval';
   }
-
+   */
+  
   /**
    * Loaders
    * Reference: http://webpack.github.io/docs/configuration.html#module-loaders
@@ -140,7 +141,7 @@ module.exports = function makeWebpackConfig(options) {
     //
     // Reference: https://github.com/webpack/style-loader
     // Use style-loader in development for hot-loading
-    loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
+    loader: ExtractTextPlugin.extract('style', 'css')
   };
 
   // Skip loading css in test mode
