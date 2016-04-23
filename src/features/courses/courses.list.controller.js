@@ -10,7 +10,7 @@ export default class CoursesListController {
     this.$state = $state
     this.searchCourses = $stateParams.courses
     this.isSearch = $stateParams.isSearch
-    this.hasNext = falses
+    this.hasNext = false
     this.pid = this.$state.params.page || 1
     if (this.isSearch) {
       this.courses = this.searchCourses

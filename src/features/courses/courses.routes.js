@@ -9,7 +9,7 @@ export default function routes($stateProvider) {
       template: require('./courses.list.html'),
       controller: 'CoursesListController',
       controllerAs: 'coursesList',
-      params: {"courses": null, isSearch: false}
+      params: {courses: null, isSearch: false}
     })
     .state('courses.list.delete', {
       url: '/delete/?id&title&type',

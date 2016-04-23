@@ -24,7 +24,8 @@ export default class CoursesSearchController {
               this.$state.go('courses.list',{
                 courses: this.courses,
                 isSearch: true
-              },{location: 'replace'});
+              });
+              console.log(this.courses);
             });
         }
     }
