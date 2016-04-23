@@ -55,3 +55,28 @@
 .courses_add_item_select{
 	margin-bottom: 20px;
 }
+.course-search {
+	margin: 30px;
+	text-align: center;
+	padding: 0 100px;
+	min-width: 600px;
+}
+.search-head{
+	height: 100%;
+}
+.search-head-input{
+	height: 36px;
+	width: 300px;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 5px 10px;
+}
+.search-head-submit{
+	height: 36px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	margin-left: -5px;
+	padding: 5px;
+	width: 60px;
+	border: thin solid #999;
+}

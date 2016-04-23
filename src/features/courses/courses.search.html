@@ -1,1 +1,6 @@
-<div>{{ coursesSearch.foo }}</div>
+<div class="course-search">
+	<form class="search-head" ng-submit ="coursesSearch.onSearchSubmit()" >
+		<input type="text" class="search-head-input" ng-model="coursesSearch.keywords" placeholder="体育"></input>
+		<input type="submit" class="search-head-submit" value="搜索"></input>
+	</form>
+</div>
