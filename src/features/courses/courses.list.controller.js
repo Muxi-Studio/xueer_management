@@ -3,23 +3,23 @@
  * by zindex
  */
 export default class CoursesListController {
-  constructor($http, $state,$stateParams) {
+  constructor($http, $state, $stateParams) {
     this.deleteDialogInfo = {}
     this.courses = []
     this.$http = $http
     this.$state = $state
-    this.searchCourses = $stateParams.courses
-    this.isSearch = $stateParams.isSearch
     this.hasNext = false
     this.pid = this.$state.params.page || 1
-    if (this.isSearch) {
-      this.courses = this.searchCourses
-      $stateParams.isSearch = false
-    }else{
+    if ($state.cusData) {
+      this.courses = $state.cusData
+      this.hasNext = $state.hasNext
+      $state.hasNext = false
+      $state.cusData = null
+    } else {
       $http.get('/api/v1.0/courses/?page=' + this.pid).then((response) => {
-        this.hasNext = /<([\da-z.\/:?=]+)>; rel="next"/.test(response.headers('link'));
-        this.courses = response.data;
-      });
+        this.hasNext = /<([\da-z.\/:?=]+)>; rel="next"/.test(response.headers('link'))
+        this.courses = response.data
+      })
     }
   }
   onDeleteClick(course) {
@@ -47,4 +47,4 @@ export default class CoursesListController {
   }
 }
 
-CoursesListController.$inject = ['$http', '$state','$stateParams']
+CoursesListController.$inject = ['$http', '$state', '$stateParams']

@@ -9,7 +9,6 @@ export default function routes($stateProvider) {
       template: require('./courses.list.html'),
       controller: 'CoursesListController',
       controllerAs: 'coursesList',
-      params: {courses: null, isSearch: false}
     })
     .state('courses.list.delete', {
       url: '/delete/?id&title&type',
@@ -34,6 +33,12 @@ export default function routes($stateProvider) {
       template: require('./courses.search.html'),
       controller: 'CoursesSearchController',
       controllerAs: 'coursesSearch',
+    })
+    .state('courses.searchResult', {
+      url: '/result/?{page:int}',
+      template: require('./courses.list.html'),
+      controller: 'CoursesListController',
+      controllerAs: 'coursesList',
     })
 }
 

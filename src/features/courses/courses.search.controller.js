@@ -4,31 +4,31 @@
  */
 export default class CoursesSearchController {
   constructor($http, $state) {
-    this.courses = [];
-    this.$http = $http;
-    this.$state = $state;
-    this.hasNext = false;
-    this.pid = this.$state.params.page || 1;
+    this.$http = $http
+    this.$state = $state
+    this.loading = false
+    this.message = ''
+  }
+  onSearchSubmit() {
+    this.message = ''
+    const reBlank = /^[\s\u3000]*$/ig
+    if (reBlank.test(this.keywords) || this.keywords === undefined) {
+      return false
     }
-  onSearchSubmit(){
-      const re_blank = /^[\s\u3000]*$/ig;
-      if (re_blank.test(this.keywords )||this.keywords===undefined) {
-          return false;
-        }
-      else{
-          this.url ='/api/v1.0/search/?keywords='+this.keywords+'&page=' + this.pid;
-            // search url   /search/?<string:keywords>&<int:page>&<string:sort>&<int:main_cat>&<int:ts_cat>
-          this.$http.get(this.url).then((response) => {
-              this.hasNext = /<([\da-z.\/:?=]+)>; rel="next"/.test(response.headers('link'));
-              this.courses = response.data;
-              this.$state.go('courses.list',{
-                courses: this.courses,
-                isSearch: true
-              });
-              console.log(this.courses);
-            });
-        }
-    }
+    this.loading = true
+    this.url = '/api/v1.0/search/?keywords=' + this.keywords + '&page=' + this.pid
+    this.$http.get(this.url).then((response) => {
+      this.$state.hasNext = /<([\da-z.\/:?=]+)>; rel="next"/.test(response.headers('link'))
+      this.loading = false
+      if (response.data.length > 0) {
+        this.$state.cusData = response.data
+        this.$state.go('courses.searchResult', {})
+      } else {
+        this.keywords = ''
+        this.message = '无结果'
+      }
+    })
+  }
 }
 
-CoursesSearchController.$inject = ['$http', '$state'];
+CoursesSearchController.$inject = ['$http', '$state']
