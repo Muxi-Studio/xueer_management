@@ -12,7 +12,29 @@ export default class CoursesUpdateController {
     this.$http.get(this.url).then((response) => {
       this.course.name = response.data.title
       this.course.teacher = response.data.teacher
+      this.course.main_category = response.data.main_category
+      this.course.sub_category = response.data.sub_category
+      this.course.credit_category = response.data.credit_category
+      this.defaultValue(this.course.main_category,this.course.sub_category,this.course.credit_category)
     })
+  }
+  defaultValue(main_category,sub_category,type_id){
+    switch(main_category){
+      case "公共课": this.course.category_id = '1'; break;
+      case "通识课": this.course.category_id = '2';break;
+      case "专业课": this.course.category_id = '3';break;
+      case "素质课": this.course.category_id = '4';break;
+    }
+    switch(sub_category){
+      case "通识核心课": this.course.sub_category_id = '1';break;
+      case "通识选修课": this.course.sub_category_id = '2';break;
+    }
+    switch(type_id){
+      case "理科": this.course.type_id = '1';break;
+      case "文科": this.course.type_id = '2';break;
+      case "艺体": this.course.type_id = '3';break;
+      case "教育": this.course.type_id = '4';break;
+    }
   }
   vaildator() {
     if (
