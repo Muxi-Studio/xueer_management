@@ -23,6 +23,7 @@ import courses from './features/courses'
 import users from './features/users'
 import comments from './features/comments'
 import tips from './features/tips'
+import settings from './features/settings'
 
 // import service
 import authService from './services/auth.service'
@@ -33,6 +34,6 @@ import convertToNumber from './directives/convertToNum.directive'
 /**
  * app module
  */
-angular.module('app', [angularUIRouter, home, courses, users, comments, tips, authService, categoryService, convertToNumber])
+angular.module('app', [angularUIRouter, home, courses, users, comments, tips, settings, authService, categoryService, convertToNumber])
   .config(routing)
   .controller('AppController', AppController)

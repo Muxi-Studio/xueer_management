@@ -3,11 +3,8 @@
         <h3 class="mdl-color-text--white m-t-20 m-b-5">评价列表</h3>
     </div>
 </div>
-<div class="mdl-grid mdl-grid--no-spacing main_content">
-    <div class="mdl-cell mdl-cell--3-col mdl-color--grey-100">
-        filter here
-    </div>
-    <div class="mdl-cell mdl-cell--9-col">
+<div class="mdl-grid mdl-grid--no-spacing main_content courses_list">
+    <div class="mdl-cell mdl-cell--12-col">
         <div class="main_content_table">
             <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
                 <thead>
@@ -20,15 +17,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="comment in commentsList.comments"
-                    ng-mouseenter="comment.focus ? (comment.focus = !comment.focus) : (comment.focus = true)" ng-mouseleave="comment.focus ? (comment.focus = !comment.focus) : (comment.focus = false)">
+                    <tr ng-repeat="comment in commentsList.comments" ng-mouseenter="comment.focus ? (comment.focus = !comment.focus) : (comment.focus = true)" ng-mouseleave="comment.focus ? (comment.focus = !comment.focus) : (comment.focus = false)">
                         <td>{{ comment.id }}</td>
                         <td>{{ comment.user_name }}</td>
                         <td>{{ comment.date }}</td>
-                        <td>{{ comment.body }}</td>
+                        <td title="{{ comment.body }}">{{ comment.body | limitTo:40 }}</td>
                         <td>
-                            <i class="material-icons" ng-show="comment.focus" 
-                            ng-click="commentsList.onDeleteClick(comment)">delete</i>
+                            <i class="material-icons" ng-show="comment.focus" ng-click="commentsList.onDeleteClick(comment)">delete</i>
                         </td>
                     </tr>
                     <tr ng-show="!commentsList.comments.length">
@@ -41,6 +36,13 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <button ng-show="commentsList.hasNext" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="commentsList.onNextClick()">
+            下一页
+        </button>
     </div>
 </div>
 <div class="dialog" ui-view></div>

@@ -11,8 +11,11 @@ export default class DialogDeleteController {
     this.$http = $http
     this.authService = authService
     this.title = this.$state.params.title || this.$state.params.id
+    this.submitting = false
   }
   onDeleteConfirm() {
+    if (this.submitting) return
+    this.submitting = true
     const url = '/api/v1.0/' + this.$state.params.type + '/' + this.$state.params.id + '/'
     this.$http({
       method: 'DELETE',
@@ -21,7 +24,7 @@ export default class DialogDeleteController {
         Authorization: 'Basic ' + this.authService.getToken(),
       },
     }).then(() => {
-      console.log(this.$rootScope.previousState)
+      this.submitting = false
       this.$state.go(this.$rootScope.previousState, this.$rootScope.fromParams, {
         reload: true,
       })

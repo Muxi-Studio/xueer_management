@@ -16,7 +16,7 @@ export default class CoursesSearchController {
       return false
     }
     this.loading = true
-    this.url = '/api/v1.0/search/?keywords=' + this.keywords + '&page=' + this.pid
+    this.url = '/api/v1.0/search/?keywords=' + this.keywords + '&page=1'
     this.$http.get(this.url).then((response) => {
       this.$state.hasNext = /<([\da-z.\/:?=]+)>; rel="next"/.test(response.headers('link'))
       this.loading = false

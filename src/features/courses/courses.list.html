@@ -17,7 +17,7 @@
         <tbody>
             <tr ng-repeat="course in coursesList.courses" ng-mouseenter="course.focus ? (course.focus = !course.focus) : (course.focus = true)" ng-mouseleave="course.focus ? (course.focus = !course.focus) : (course.focus = false)">
                 <td>{{ course.id }}</td>
-                <td>{{ course.title }}</td>
+                <td>{{ course.title | limitTo:18 }}</td>
                 <td>{{ course.teacher }}</td>
                 <td>{{ course.views }}</td>
                 <td>{{ course.main_category }}</td>

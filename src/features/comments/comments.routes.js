@@ -5,7 +5,7 @@ export default function routes($stateProvider) {
       template: require('./comments.html'),
     })
     .state('comments.list', {
-      url: '/list/:courseId',
+      url: '/list/:courseId?{page:int}',
       template: require('./comments.list.html'),
       controller: 'CommentsListController',
       controllerAs: 'commentsList',
