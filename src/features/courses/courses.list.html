@@ -22,7 +22,7 @@
                 <td>{{ course.views }}</td>
                 <td>{{ course.main_category }}</td>
                 <td>{{ course.sub_category }}</td>
-                <td>{{ course.type_id }}</td>
+                <td>{{ course.credit_category }}</td>
                 <td class="courses_list_icon_edit">
                     <a ui-sref="courses.update({ cid:course.id })">
                         <i class="material-icons" ng-show="course.focus">border_color</i>
@@ -39,6 +39,9 @@
     </table>
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--4-col">
+            <button ng-show="coursesList.hasPrev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="coursesList.onPrevClick()">
+                上一页
+            </button>
         </div>
         <div class="mdl-cell mdl-cell--4-col">
             <button ng-show="coursesList.hasNext" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="coursesList.onNextClick()">

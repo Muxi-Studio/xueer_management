@@ -35,10 +35,16 @@ export default function routes($stateProvider) {
       controllerAs: 'coursesSearch',
     })
     .state('courses.searchResult', {
-      url: '/result/?{page:int}',
+      url: '/search_result/?{page:int}&{keywords:string}',
       template: require('./courses.list.html'),
-      controller: 'CoursesListController',
+      controller: 'CoursesListSearchController',
       controllerAs: 'coursesList',
+    })
+    .state('courses.searchResult.delete', {
+      url: '/delete/?id&title&type',
+      template: require('../../components/dialog/dialog.html'),
+      controller: 'DialogDeleteController',
+      controllerAs: 'dialogDelete',
     })
 }
 

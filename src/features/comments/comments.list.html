@@ -37,7 +37,12 @@
             </table>
         </div>
     </div>
+</div>
+<div class="mdl-grid main_content courses_list">
     <div class="mdl-cell mdl-cell--4-col">
+        <button ng-show="commentsList.hasPrev" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="commentsList.onPrevClick()">
+            上一页
+        </button>
     </div>
     <div class="mdl-cell mdl-cell--4-col">
         <button ng-show="commentsList.hasNext" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="commentsList.onNextClick()">
