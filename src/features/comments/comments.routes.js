@@ -7,7 +7,13 @@ export default function routes($stateProvider) {
     .state('comments.list', {
       url: '/list/:courseId?{page:int}',
       template: require('./comments.list.html'),
-      controller: 'CommentsListController',
+      controller: 'CommentsListCourseController',
+      controllerAs: 'commentsList',
+    })
+    .state('comments.all', {
+      url: '/all?{page:int}',
+      template: require('./comments.list.html'),
+      controller: 'CommentsListAllController',
       controllerAs: 'commentsList',
     })
     .state('comments.list.delete', {

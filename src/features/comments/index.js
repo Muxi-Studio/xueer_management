@@ -15,6 +15,8 @@ import angularUIRouter from 'angular-ui-router'
 // import deps
 import routing from './comments.routes'
 import CommentsListController from './comments.list.controller'
+import CommentsListAllController from './comments.list.all.controller'
+import CommentsListCourseController from './comments.list.course.controller'
 
 /**
  * users module
@@ -22,4 +24,6 @@ import CommentsListController from './comments.list.controller'
 export default angular.module('app.comments', [angularUIRouter])
   .config(routing)
   .controller('CommentsListController', CommentsListController)
+  .controller('CommentsListAllController', CommentsListAllController)
+  .controller('CommentsListCourseController', CommentsListCourseController)
   .name

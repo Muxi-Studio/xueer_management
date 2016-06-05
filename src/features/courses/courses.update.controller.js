@@ -3,7 +3,7 @@
  * by zindex
  */
 export default class CoursesUpdateController {
-  constructor($http, $state,authService,categoryService) {
+  constructor($http, $state, authService, categoryService) {
     this.url = '/api/v1.0/courses/' + $state.params.cid + '/'
     this.course = {}
     this.$http = $http
@@ -48,4 +48,4 @@ export default class CoursesUpdateController {
   }
 }
 
-CoursesUpdateController.$inject = ['$http', '$state','authService','categoryService']
+CoursesUpdateController.$inject = ['$http', '$state', 'authService', 'categoryService']
