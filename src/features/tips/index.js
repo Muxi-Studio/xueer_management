@@ -16,6 +16,7 @@ import angularUIRouter from 'angular-ui-router'
 import routing from './tips.routes'
 import TipsListController from './tips.list.controller'
 import TipsAddController from './tips.add.controller'
+import TipsUpdateController from './tips.update.controller'
 
 /**
  * courses module
@@ -24,4 +25,5 @@ export default angular.module('app.tips', [angularUIRouter])
   .config(routing)
   .controller('TipsListController', TipsListController)
   .controller('TipsAddController', TipsAddController)
+  .controller('TipsUpdateController', TipsUpdateController)
   .name

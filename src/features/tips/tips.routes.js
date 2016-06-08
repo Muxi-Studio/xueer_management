@@ -22,6 +22,12 @@ export default function routes($stateProvider) {
       controller: 'DialogDeleteController',
       controllerAs: 'dialogDelete',
     })
+    .state('tips.update', {
+      url: '/update/:cid',
+      template: require('./tips.add.html'),
+      controller: 'TipsUpdateController',
+      controllerAs: 'tipsAdd',
+    })
 }
 
 routes.$inject = ['$stateProvider']
