@@ -27,6 +27,7 @@ export default class TipsUpdateController {
       this.tip.title &&
       this.tip.author &&
       this.tip.img_url &&
+      this.tip.banner_url &&
       this.tip.body) {
       return true
     }
@@ -39,7 +40,7 @@ export default class TipsUpdateController {
     }
     this.$http({
       method: 'PUT',
-      url: '/api/v1.0/tips/',
+      url: '/api/v1.0/tips/' + this.$state.params.cid + '/',
       headers: {
         Authorization: 'Basic ' + this.authService.getToken(),
       },

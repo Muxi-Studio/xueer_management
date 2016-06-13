@@ -20,6 +20,7 @@ export default class TipsAddController {
       this.tip.title &&
       this.tip.author &&
       this.tip.img_url &&
+      this.tip.banner_url &&
       this.tip.body) {
       return true
     }
