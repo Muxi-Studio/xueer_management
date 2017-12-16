@@ -224,7 +224,7 @@ module.exports = function makeWebpackConfig(options) {
     },
     proxy: {
       '/api/*': {
-        target: 'http://121.41.6.148:5050',
+        target: 'http://xueer.muxixyz.com',
         secure: false,
         pathRewrite: {
           '^/api': '',
