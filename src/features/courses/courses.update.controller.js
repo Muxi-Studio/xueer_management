@@ -13,7 +13,8 @@ export default class CoursesUpdateController {
     this.$http.get(this.url).then((response) => {
       this.course.name = response.data.title
       this.course.teacher = response.data.teacher
-      this.course.category_id = this.categoryService.defaultCategory()[response.data.main_category] 
+      this.course.available = !!response.data.available
+      this.course.category_id = this.categoryService.defaultCategory()[response.data.main_category]
       this.course.sub_category_id = this.categoryService.defaultCategory()[response.data.sub_category]
       this.course.type_id = this.categoryService.defaultCategory()[response.data.credit_category]
     })

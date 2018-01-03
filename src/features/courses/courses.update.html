@@ -8,7 +8,7 @@
         <label class="mdl-textfield__label" for="teacher">教师</label>
     </div>
     <div>课程主分类</div>
-    <select class="courses_add_item courses_add_item_select" 
+    <select class="courses_add_item courses_add_item_select"
     id="main_cat" ng-model="coursesAdd.course.category_id" convert-to-number required >
         <option value="1">公共课</option>
         <option value="3">通识课</option>
@@ -16,12 +16,16 @@
         <option value="2">素质课</option>
     </select>
     <div>通识学分类别</div>
-    <select class="courses_add_item courses_add_item_select" id="type_id" 
+    <select class="courses_add_item courses_add_item_select" id="type_id"
     ng-bind="coursesAdd.course.type_id" required>
         <option value="1">理科</option>
         <option value="2">文科</option>
         <option value="3">艺体</option>
         <option value="4">工科</option>
     </select>
+    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+      <input ng-model="coursesAdd.course.available" type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+      <span class="mdl-checkbox__label">当前学期是否开课</span>
+    </label>
     <div class="mdl-button mdl-js-button mdl-button--raised" ng-click="coursesAdd.submit()">提交</div>
 </form>

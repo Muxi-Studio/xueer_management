@@ -76,7 +76,7 @@ module.exports = function makeWebpackConfig(options) {
     config.devtool = 'eval';
   }
    */
-  
+
   /**
    * Loaders
    * Reference: http://webpack.github.io/docs/configuration.html#module-loaders
@@ -224,7 +224,7 @@ module.exports = function makeWebpackConfig(options) {
     },
     proxy: {
       '/api/*': {
-        target: 'http://xueer.muxixyz.com',
+        target: 'https://xueer.muxixyz.com',
         secure: false,
         pathRewrite: {
           '^/api': '',
