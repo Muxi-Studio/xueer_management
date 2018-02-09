@@ -1,0 +1,13 @@
+{
+	"routes": [
+		{
+			"name" : "home",
+			"endpoint": "/admin",
+			"template": "home",
+			"async": false
+		}
+	],
+	"data":{
+		
+	}
+}
