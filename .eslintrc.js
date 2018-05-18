@@ -1,29 +1,50 @@
-// https://eslint.org/docs/user-guide/configuring
-
 module.exports = {
   root: true,
+  parser: 'babel-eslint',
   parserOptions: {
-    parser: 'babel-eslint'
+      sourceType: 'module'
   },
-  env: {
-    browser: true,
-  },
-  extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
-  ],
+  extends: 'airbnb-base',
   // required to lint *.vue files
-  plugins: [
-    'vue'
-  ],
+  plugins: ['html'],
+  // check if imports actually resolve
+  'settings': {
+      'import/resolver': {
+          'webpack': {
+              'config': './webpack.dev.config.js'
+          }
+      }
+  },
+  'globals': {
+      'document': true,
+      'fetch': true,
+      'window': true,
+      'history': true
+  },
   // add your custom rules here
-  rules: {
-    // allow async-await
-    'generator-star-spacing': 'off',
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+  'rules': {
+      // don't require .vue extension when importing
+      'import/extensions': [0, 'always', {
+          'js': 'never',
+          'vue': 'never'
+      }],
+      'import/no-unresolved': [0, {
+          ignore: ['\.vue$', '\.js$']
+      }],
+      'eqeqeq': 'off',
+      'quotes': ['error', 'single'],
+      'no-console': 1,
+      'no-tabs': 0,
+      'indent': ['error', 'tab'],
+      'semi': ['error', 'never'],
+      'camelcase': 0,
+      'no-plusplus': 0,
+      'arrow-parens': 0,
+      'prefer-template': 0,
+      'no-param-reassign': 0,
+      'no-shadow': 0,
+      'func-names': 0,
+      'no-unused-expressions': 0,
+      'arrow-body-style': 0,
   }
 }

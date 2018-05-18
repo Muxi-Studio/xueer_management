@@ -2,3 +2,6 @@
 /config/
 /dist/
 /*.js
+webpack.dev.config.js
+webpack.build.config.js
+ninja.conf.js
