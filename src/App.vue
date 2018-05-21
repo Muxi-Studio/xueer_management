@@ -5,21 +5,16 @@
     <router-link to="/user">用户</router-link>
     <router-link to="/article">运营</router-link>
     <router-view></router-view>
-    <!-- <Loading></Loading>
-    <LoginDialog></LoginDialog> -->
-    <!-- <Course></Course> -->
+    <Loading></Loading>
   </div>
 </template>
 
 <script>
-// import Loading from "./components/common/Loading"
-// import LoginDialog from "./components/common/LoginDialog"
-import Course from "./components/course/course";
+import Loading from "./components/common/Loading"
+
 export default {
   components: {
-      // Loading,
-      // LoginDialog,
-      // Course
+      Loading,
   }
 }
 </script>
