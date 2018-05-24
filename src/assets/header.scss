@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(242, 242, 242);
+  padding: 0 20px;
+  align-items: center;
+  box-shadow: 0 0 10px 0 gray;
+}
+
+.m_button {
+  margin: 0 20px;
+}
+
+.title {
+  line-height: 80px;
+  font-size: 20px;
+  color: #757575;
+}
+
+.list {
+  padding: 20px;
+}
