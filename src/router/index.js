@@ -24,7 +24,7 @@ export default new Router({
       component: Course,
       children: [
         {
-          path: "",
+          path: "list",
           component: CourseList
         },
         {

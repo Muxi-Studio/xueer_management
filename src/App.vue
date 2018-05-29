@@ -3,8 +3,8 @@
     <div class="navi">
       <div class="navi_top flex_center">
         <div class="margin text_align">
-        <img :src="avatar" class="avatar">
-        <div class="user">{{username}}</div>
+        <img class="logo" src="./assets/logo.png">
+        <div class="user">学而管理后台</div>
         </div>
       </div>
       <div class="navi_link">
@@ -45,10 +45,10 @@ export default {
   text-align: center;
 }
 .navi {
-  width: 250px;
+  min-width: 250px;
 }
 
-.avatar {
+.logo {
   width: 70px;
 }
 
@@ -94,5 +94,7 @@ export default {
 
 .main {
   flex: 1;
+  min-width: 700px;
+  overflow: scroll;
 }
 </style>
