@@ -15,11 +15,11 @@
         </m-table-col>
         <m-table-col prop="credit_category" label="学分类别" width="10%">
         </m-table-col>
-        <!-- <m-table-col label="编辑" prop="active" width="10%">
+        <m-table-col label="编辑" prop="active" width="10%">
           <template scope="row">
-              <m-button :on-click="onclick.bind(this, row.index)">Delete</m-button>
-          </template> -->
-        <!-- </m-table-col> -->
+              <m-button :on-click="onDelete.bind(this, row)">Delete</m-button>
+          </template>
+        </m-table-col>
       </m-table>
   </div>
 </template>
@@ -38,7 +38,12 @@ export default {
     })
   },
   methods: {
-    ...mapActions(["fetchCoursesList"])
+    ...mapActions(["fetchCoursesList"]),
+    onDelete(i) {
+
+      console.log(arguments)
+    },
+    onEdit() {},
   },
   mounted() {
     this.fetchCoursesList();
