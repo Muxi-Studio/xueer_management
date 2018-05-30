@@ -15,34 +15,37 @@
         </m-table-col>
         <m-table-col prop="credit_category" label="学分类别" width="10%">
         </m-table-col>
-        <m-table-col label="编辑" prop="active" width="10%">
-          <template scope="row">
-              <m-button :on-click="onDelete.bind(this, row)">Delete</m-button>
+        <m-table-col label="操作" prop="active" width="10%">
+          <template slot-scope="row">
+            <m-button :on-click="deleteCourse.bind(this, row)">Delete</m-button>
+            <!-- <m-button :on-click="onEdit.bind(this, row)">Edit</m-button> -->
           </template>
         </m-table-col>
       </m-table>
+      <Pagiantion :page="page" :totalPages="totalPages" v-on:prePage="prePage" v-on:nextPage="nextPage"></Pagiantion>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex";
-
+import Pagiantion from "../common/pagination";
 export default {
   name: "CourseList",
   data() {
     return {};
   },
+  components: {
+    Pagiantion: Pagiantion
+  },
   computed: {
     ...mapState({
-      courses: state => state.courseList.courses
+      courses: state => state.courseList.courses,
+      page: state => state.courseList.page,
+      totalPages: state => state.courseList.totalPages
     })
   },
   methods: {
-    ...mapActions(["fetchCoursesList"]),
-    onDelete(i) {
-
-      console.log(arguments)
-    },
+    ...mapActions(["fetchCoursesList", "prePage", "nextPage", "deleteCourse"]),
     onEdit() {},
   },
   mounted() {
