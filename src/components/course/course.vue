@@ -14,12 +14,16 @@
   </div>
 </template>
 <script>
-export default {
-
-
-}
+export default {};
 </script>
 <style lang="scss">
 @import "../../assets/header.scss";
+.header {
+  height: 64px;
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 </style>
 

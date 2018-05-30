@@ -25,22 +25,23 @@
 </template>
 
 <script>
-import {mapState, mapGetters, mapActions} from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 
-  export default {
-    name: "CourseList",
-    data() {
-      return {
-      }
-    },
-    computed: {
-      ...mapGetters(["page", "courses"])
-    },
-    methods: {
-      ...mapActions(["fetchCourseList"])
-    },
-    mounted() {
-      this.fetchCourseList();
-    }
+export default {
+  name: "CourseList",
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState({
+      courses: state => state.courseList.courses
+    })
+  },
+  methods: {
+    ...mapActions(["fetchCoursesList"])
+  },
+  mounted() {
+    this.fetchCoursesList();
   }
+};
 </script>

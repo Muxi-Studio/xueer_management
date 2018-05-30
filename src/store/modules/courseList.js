@@ -17,14 +17,13 @@ const getters = {
 const actions = {
   fetchCoursesList({ commit, state }) {
     CourseListService.fetchCoursesList(state.page).then(res => {
-      commit("getCourses", res.json);
-      console.log("action")
+      commit("setCourses", res);
     });
   },
 };
 
 const mutations = {
-  getCourses(state, courses) {
+  setCourses(state, courses) {
     state.courses = courses
   },
   nextPage(state) {
