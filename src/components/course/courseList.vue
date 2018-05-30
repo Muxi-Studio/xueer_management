@@ -37,10 +37,10 @@ import {mapState, mapGetters, mapActions} from "vuex";
       ...mapGetters(["page", "courses"])
     },
     methods: {
-      ...mapActions(["fetchCoursesList"])
+      ...mapActions(["fetchCourseList"])
     },
     mounted() {
-      this.fetchCoursesList();
+      this.fetchCourseList();
     }
   }
 </script>
