@@ -34,6 +34,10 @@ export default new Router({
         {
           path: "searchcourse",
           component: SearchCourse
+        },
+        {
+          path: "editcourse/:id",
+          component: AddCourse
         }
       ]
     },
