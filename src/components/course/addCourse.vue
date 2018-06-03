@@ -5,7 +5,7 @@
     <div class="add_item">
     课程主分类：
     <m-select v-model="main_category">
-      <m-option v-for="item in main_options" :key="item.value" :label="item.label" :value="item.value">
+      <m-option v-for="item in main_options" :key="item.value" :label="item.label" :value="`${item.value}`">
       </m-option>
     </m-select>
     </div>
@@ -25,10 +25,10 @@
     </div>
     <div class="add_item">
     是否在本学期开设：
-    <m-radio v-model="available" label="true">是</m-radio>
-    <m-radio v-model="available" label="false">否</m-radio>
+    <m-radio v-model="available" label="1">是</m-radio>
+    <m-radio v-model="available" label="0">否</m-radio>
     </div>
-    <m-button :on-click="addCourse">确定</m-button>
+    <m-button :on-click="submit">确定</m-button>
   </div>
 </template>
 <script>
@@ -38,72 +38,90 @@ import { mapState, mapGetters, mapActions} from 'vuex';
       return {
         course_name: "",
         teacher: "",
-        main_category: 1,
-        sub_category: 1,
-        available: true,
-        type: 1,
+        main_category: "1",
+        sub_category: "1",
+        available: "1",
+        type: "1",
         id: 1,
         main_options: [
           {
-            value: 1,
+            value: "1",
             label:"公共课"
           },
           {
-            value: 2,
+            value: "2",
             label:"通识课"
           },
           {
-            value: 3,
+            value: "3",
             label:"专业课"
           },
           {
-            value: 4,
+            value: "4",
             label:"素质课"
           }
         ],
         sub_options: [
           {
-            value: 0,
+            value: "0",
             label:"无"
           },
           {
-            value: 1,
+            value: "1",
             label:"通识核心课"
           },
           {
-            value: 2,
+            value: "2",
             label:"通识选修课"
           }
         ],
         type_options: [
           {
-            value: 1,
+            value: "1",
             label:"理科"
           },
           {
-            value: 2,
+            value: "2",
             label:"文科"
           },
           {
-            value: 3,
+            value: "3",
             label:"艺体"
           },
           {
-            value: 4,
+            value: "4",
             label:"教育"
           }
-        ]
+        ],
+        // course_info: {
+        //   type: Object
+        // }
       }
     },
     computed: {
-      ...mapGetters([])
+      ...mapGetters(["course_info"])
     },
     methods: {
-      ...mapActions(["addCourse", "getCourse"]),
+      ...mapActions(["addCourse", "getCourse", "editCourse", "setID"]),
+      submit() {
+        this.course_info.name = this.course_name;
+        this.course_info.teacher = this.teacher;
+        this.course_info.category_id = parseInt(this.main_category);
+        this.course_info.sub_category_id = parseInt(this.sub_category);
+        this.course_info.type_id = parseInt(this.type);
+        if (this.$route.params.id) {
+          this.course_info.id = this.$route.params.id;
+          this.course_info.available = ((this.available == "1") ? true : false);
+          this.editCourse(this.course_info)
+        } else {
+          this.addCourse(this.course_info)
+        }
+      }
     },
     mounted() {
       if(this.$route.params.id) {
-        this.getCourse()
+        this.setID(this.$route.params.id);
+        this.getCourse();
       }
     }
   }

@@ -21,6 +21,37 @@ let CourseService = {
         "Authorization": "Basic " + btoa(token + ":")
       }
     })
+  },
+  addCourse(course, token) {
+    return Fetch("/api/v1.0/courses/", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Basic " + btoa(token + ":")
+      },
+      data: course
+    })
+  },
+  editCourse(id, course, token) {
+    return Fetch("/api/v1.0/courses/" + id, {
+      method: "PUT",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Basic " + btoa(token + ":")
+      },
+      data: course
+    })
+  },
+  getCourse(id) {
+    return Fetch("/api/v1.0/courses/" + id, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    })
   }
 }
 
