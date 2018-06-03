@@ -1,3 +1,10 @@
+<template>
+  <div class="header">
+      <slot name="title"></slot>
+      <slot name="buttons"></slot>
+    </div>
+</template>
+<style lang="scss">
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,6 +12,11 @@
   padding: 0 40px;
   align-items: center;
   box-shadow: 0 0 10px 0 gray;
+  height: 64px;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .m_button {
@@ -20,3 +32,4 @@
 .list {
   padding: 20px;
 }
+</style>

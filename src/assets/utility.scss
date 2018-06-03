@@ -1,3 +1,9 @@
+$red: #ef4836;
+$darkGreen: #1bbc9b;
+$green: #2ecc71;
+$yellow: #f4d03f;
+$grey: #c3dbd8;
+
 .vertical_align {
   vertical-align: middle;
 }
@@ -37,4 +43,5 @@
 .flex_center {
   display: flex;
   align-items: center;
+  justify-content: center;
 }

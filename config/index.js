@@ -14,9 +14,6 @@ module.exports = {
       '/api': {
         target: 'https://xueer.muxixyz.com',
         changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
       }
     },
 

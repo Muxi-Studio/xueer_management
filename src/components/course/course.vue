@@ -1,25 +1,23 @@
 <template>
   <div>
-    <div class="header">
-      <div class="title">课程</div>
-      <div class="buttons">
-      <router-link to="/list"><m-button class="m_button">课程列表</m-button></router-link>
-      <router-link to="/searchcourse"><m-button class="m_button">搜索课程</m-button></router-link>
-      <router-link to="/addcourse"><m-button class="m_button">添加课程</m-button></router-link>
-    </div>
-    </div>
+    <Header>
+      <div slot="title" class="title">课程</div>
+      <div slot="buttons" class="buttons">
+        <router-link to="/list"><m-button class="m_button">课程列表</m-button></router-link>
+        <router-link to="/searchcourse"><m-button class="m_button">搜索课程</m-button></router-link>
+        <router-link to="/addcourse"><m-button class="m_button">添加课程</m-button></router-link>
+      </div>
+    </Header>
     <div class="list">
       <router-view></router-view>
     </div>
   </div>
 </template>
 <script>
+import Header from "../common/header";
 export default {
-
-
-}
+  components: {
+    Header: Header
+  }
+};
 </script>
-<style lang="scss">
-@import "../../assets/header.scss";
-</style>
-

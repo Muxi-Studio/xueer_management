@@ -8,10 +8,34 @@
         </div>
       </div>
       <div class="navi_link">
-        <div class="navi_item flex_center"><router-link to="/"><i class="item_eng">Course</i><span class="item_ch">课程</span></router-link></div>
-        <div class="navi_item flex_center"><router-link to="/user"><i class="item_eng">User</i><span class="item_ch">用户</span></router-link></div>
-        <div class="navi_item flex_center"><router-link to="/comment"><i class="item_eng">Comment</i><span class="item_ch">评论</span></router-link></div>
-        <div class="navi_item flex_center"><router-link to="/article"><i class="item_eng">Article</i><span class="item_ch">运营</span></router-link></div>
+        <router-link to="/">
+        <div class="navi_item flex_center">
+          <i class="material-icons">library_books</i>
+          <i class="item_eng">Course</i>
+          <span class="item_ch">课程</span>
+         </div>
+          </router-link>
+        <router-link to="/user">
+        <div class="navi_item flex_center">
+          <i class="material-icons">account_box</i>
+          <i class="item_eng">User</i>
+          <span class="item_ch">用户</span>
+        </div>
+        </router-link>
+        <router-link to="/comment">
+        <div class="navi_item flex_center">
+          <i class="material-icons">comment</i>
+          <i class="item_eng">Comment</i>
+          <span class="item_ch">评论</span>
+        </div>
+         </router-link>
+          <router-link to="/article">
+        <div class="navi_item flex_center">
+          <i class="material-icons">library_add</i>
+          <i class="item_eng">Article</i>
+          <span class="item_ch">运营</span>
+        </div>
+        </router-link>
       </div>
     </div>
     <div class="main">
@@ -83,7 +107,7 @@ export default {
 }
 .item_eng {
   color: #78909c;
-  margin-right: 32px;
+  margin: 0 10px;
   font-size: 24px;
 }
 

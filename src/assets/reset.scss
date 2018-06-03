@@ -37,7 +37,7 @@ button {
   font-weight: 400;
   src: local('Material Icons'),
   local('MaterialIcons-Regular'),
-  url(https://xueer.com/admin/MaterialIcons-Regular.woff2) format('woff2'),
+  url(http://o6leenpcq.bkt.clouddn.com/MaterialIcons-Regular.woff2) format('woff2'),
 }
 
 .material-icons {
@@ -54,4 +54,10 @@ button {
   direction: ltr;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+  color: rgba(255,255,255,.56);
+  vertical-align: middle;
+}
+
+.material-icons-light {
+  cursor: pointer;
 }
