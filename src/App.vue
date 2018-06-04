@@ -45,18 +45,13 @@
 </template>
 
 <script>
-// import Loading from "./components/common/Loading"
 import { mapState, mapActions } from "vuex";
 export default {
   data() {
     return {};
   },
-  computed: {
-    ...mapState(["username", "avatar"])
+  mounted() {
   }
-  // components: {
-  //     Loading,
-  // }
 }
 </script>
 
