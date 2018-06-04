@@ -17,10 +17,10 @@
         </m-table-col>
         <m-table-col label="操作" prop="active" width="10%">
           <template slot-scope="row">
-            <span @click="deleteCourse.bind(this, row)">
+            <span v-on:click="deleteCourse.bind(this, row)">
               <i class="material-icons material-icons-light delete">delete_sweep</i>
             </span>
-            <span @click="onEdit.bind(this, row)">
+            <span v-on:click="onEdit.bind(this, row)">
               <i class="material-icons material-icons-light edit">edit</i>
             </span>
            <!-- <m-button :on-click="deleteCourse.bind(this, row)">Delete</m-button> -->
