@@ -11,14 +11,14 @@ const actions = {
       if (res !== null && res !== undefined) {
         Cookie.setCookie("token", res.token);
         commit("isLoading", false);
-        window.location.href = Cookie.getCookie("url");
+        window.location.href="/list";
       } else {
         SignService.getUsername(email).then(info => {
           SignService.register(info.username, email).then(res => {
             SignService.getToken(email).then(res => {
               Cookie.setCookie("token", res.token);
               commit("isLoading", false);
-              window.location.href = Cookie.getCookie("url");
+              window.location.href="/list";
             });
           });
         });

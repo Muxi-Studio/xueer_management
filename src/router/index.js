@@ -11,13 +11,18 @@ import UserAdmin from "../components/user/UserAdmin";
 import Article from "../components/article/article";
 import AddArticle from "../components/article/addArticle";
 import ArticleList from "../components/article/articleList";
-
+import Landing from "../components/common/landing";
 
 Vue.use(Router);
 export default new Router({
   mode: "history",
   base: __dirname,
   routes: [
+    {
+      name: "landing",
+      path: "/landing",
+      component: Landing
+    },
     {
       name: "course",
       path: "/",
