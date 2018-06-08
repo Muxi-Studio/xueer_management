@@ -25,7 +25,8 @@ const actions = {
       }
     });
   },
-  setToken({ commit }, token) {
+  setToken({ commit }) {
+    let token = Cookie.getCookie("token");
     commit("setToken", token);
     commit("isLogin");
   }
