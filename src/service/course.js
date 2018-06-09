@@ -2,13 +2,13 @@ import Fetch from "./fetch.js";
 
 let CourseService = {
   getCoursesList(params) {
-    return Fetch("api/v1.0/courses", {
+    return Fetch("/api/v1.0/courses", {
       data: params,
       responseHeaders: ["link"]
     });
   },
   getNextCoursesList(params) {
-    return Fetch("api/v1.0/courses", {
+    return Fetch("/api/v1.0/courses", {
       data: params
     });
   },
