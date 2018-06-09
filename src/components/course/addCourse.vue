@@ -1,6 +1,5 @@
 <template>
   <div class="add_course">
-    {{course}}
     <m-input placeholder="课程名" label="课程名" v-model="course.name" class="add_item"></m-input>
     <m-input placeholder="教师" label="教师" v-model="course.teacher" class="add_item"></m-input>
     <div class="add_item">
