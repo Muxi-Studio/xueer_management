@@ -34,7 +34,7 @@ let CourseService = {
     })
   },
   editCourse(id, course, token) {
-    return Fetch("/api/v1.0/courses/" + id, {
+    return Fetch("/api/v1.0/courses/" + id + "/", {
       method: "PUT",
       headers: {
         "Accept": "application/json",
@@ -45,7 +45,7 @@ let CourseService = {
     })
   },
   getCourse(id) {
-    return Fetch("/api/v1.0/courses/" + id, {
+    return Fetch("/api/v1.0/courses/" + id + "/", {
       method: "GET",
       headers: {
         "Accept": "application/json",

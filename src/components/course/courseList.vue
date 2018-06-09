@@ -17,13 +17,15 @@
         </m-table-col>
         <m-table-col label="操作" prop="active" width="10%">
           <template slot-scope="row">
-            <span v-on:click="deleteCourse.bind(this, row)">
+           <div>
+             <span @click="deleteCourse(row)">
               <i class="material-icons material-icons-light delete">delete_sweep</i>
             </span>
-            <span v-on:click="onEdit.bind(this, row)">
+            <span @click="onEdit(row)">
               <i class="material-icons material-icons-light edit">edit</i>
             </span>
-           <!-- <m-button :on-click="deleteCourse.bind(this, row)">Delete</m-button> -->
+           </div>
+           <!-- <m-button @click="deleteCourse.bind(this, row)">Delete</m-button> -->
           </template>
         </m-table-col>
       </m-table>
@@ -51,10 +53,10 @@ export default {
   },
   methods: {
     ...mapActions(["fetchCoursesList", "prePage", "nextPage", "deleteCourse"]),
-    onEdit() {
-      // this.$router.push({ path: `/editcourse/${this.id}/` })
-      console.log("this.id")
-    },
+    onEdit(e) {
+      this.$router.push({ path: `/editcourse/${e.id}/` })
+      console.log(e);
+    }
   },
   mounted() {
     this.fetchCoursesList();
