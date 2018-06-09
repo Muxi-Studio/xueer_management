@@ -1,16 +1,16 @@
 <template>
-	<div  :class="$style.loading">
-	    <div :class="[$style.boxes, $style.space]">
-	        <div :class="[$style.box, $style.left]"></div>
-	        <div :class="[$style.box, $style.middle]"></div>
-	        <div :class="[$style.box, $style.right]"></div>
+	<div  class="loading">
+	    <div class="boxes space">
+	        <div class="box left"></div>
+	        <div class="box middle"></div>
+	        <div class="box right"></div>
 	    </div>
 	 </div>
 </template>
 <script>
 export default {};
 </script>
-<style lang='scss' module>
+<style lang='scss'>
 .loading {
   width: 100%;
   height: 100%;
@@ -23,7 +23,7 @@ export default {};
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50% -50%);
 }
 .box {
   display: inline-block;

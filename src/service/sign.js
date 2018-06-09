@@ -13,7 +13,8 @@ let SignService = {
     });
   },
   getToken(email) {
-    return Fetch("/api/v1.0/token/", {
+    return Fetch("https://xueer.muxixyz.com/api/v1.0/token/", {
+    // return Fetch("/api/v1.0/token/", {
       method: "GET",
       headers: {
         Accept: "application/json",

@@ -11,28 +11,28 @@
         <router-link to="/">
         <div class="navi_item flex_center">
           <i class="material-icons">library_books</i>
-          <i class="item_eng">Course</i>
+          <!-- <i class="item_eng"></i> -->
           <span class="item_ch">课程</span>
          </div>
           </router-link>
         <router-link to="/user">
         <div class="navi_item flex_center">
           <i class="material-icons">account_box</i>
-          <i class="item_eng">User</i>
+          <!-- <i class="item_eng">User</i> -->
           <span class="item_ch">用户</span>
         </div>
         </router-link>
         <router-link to="/comment">
         <div class="navi_item flex_center">
           <i class="material-icons">comment</i>
-          <i class="item_eng">Comment</i>
+          <!-- <i class="item_eng">Comment</i> -->
           <span class="item_ch">评论</span>
         </div>
          </router-link>
           <router-link to="/article">
         <div class="navi_item flex_center">
           <i class="material-icons">library_add</i>
-          <i class="item_eng">Article</i>
+          <!-- <i class="item_eng">Article</i> -->
           <span class="item_ch">运营</span>
         </div>
         </router-link>
@@ -49,8 +49,6 @@ import { mapState, mapActions } from "vuex";
 export default {
   data() {
     return {};
-  },
-  mounted() {
   }
 }
 </script>
@@ -108,7 +106,8 @@ export default {
 
 .item_ch {
   color: rgba(255,255,255,.56);
-  font-size: 14px;
+  font-size: 18px;
+  margin-left:12px;
 }
 
 .main {
