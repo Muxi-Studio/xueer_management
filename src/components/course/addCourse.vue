@@ -25,8 +25,8 @@
     </div>
     <div class="add_item">
     是否在本学期开设：
-    <m-radio v-model="course.available" label="1">是</m-radio>
-    <m-radio v-model="course.available" label="0">否</m-radio>
+    <m-radio v-model="course.available" label=true>是</m-radio>
+    <m-radio v-model="course.available" label=false>否</m-radio>
     </div>
     <m-button :on-click="submit">确定</m-button>
   </div>
@@ -57,7 +57,7 @@ import { mapState, mapGetters, mapActions} from 'vuex';
         ],
         sub_options: [
           {
-            value: 0,
+            value: null,
             label:"无分类"
           },
           {
@@ -70,6 +70,10 @@ import { mapState, mapGetters, mapActions} from 'vuex';
           }
         ],
         type_options: [
+          {
+            value: null,
+            label:"无分类"
+          },
           {
             value: 1,
             label:"理科"
@@ -107,7 +111,7 @@ import { mapState, mapGetters, mapActions} from 'vuex';
     },
     mounted() {
       if(this.id) {
-        this.getCourse(this.id).then();
+        this.getCourse(this.id);
       }
     }
   }

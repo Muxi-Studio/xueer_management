@@ -6,6 +6,7 @@ const state = {
   id: 1,
   course: {},
   type_map: {
+    "无分类": null,
     "理科": 1,
     "文科": 2,
     "艺体": 3,
@@ -18,7 +19,7 @@ const state = {
     "素质课": 4
   },
   sub_category_map: {
-    "无分类": 0,
+    "无分类": null,
     "通识核心课": 1,
     "通识选修课": 2
   }
@@ -55,7 +56,7 @@ const actions = {
   },
   editCourse({ state, commit }) {
     state.course.id = state.id;
-    state.course.available = ((state.course.available == "1") ? true : false);
+    // state.course.available = ((state.course.available == 1) ? true : false);
     CourseService.editCourse(state.id, state.course, State.token).then(res => {
       window.locaition.href = "/list";
     })
@@ -72,7 +73,8 @@ const mutations = {
     state.course.main_category = state.main_category_map[json.main_category];
     state.course.sub_category = state.sub_category_map[json.sub_category];
     state.course.type_id = state.type_map[json.credit_category];
-    state.course.available = (json.available === true) ? 1 : 0
+    // state.course.available = (json.available === true) ? 1 : 0
+    state.course.available = json.available
     console.log(state.course)
   }
 };
