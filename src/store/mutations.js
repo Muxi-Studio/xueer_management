@@ -6,6 +6,7 @@ const mutations = {
   },
   setToken(state, token) {
     state.token = token
+    console.log(state.token)
   },
   isLogin(state) {
     state.is_logined = true

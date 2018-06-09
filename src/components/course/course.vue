@@ -14,10 +14,17 @@
   </div>
 </template>
 <script>
+import { mapState, mapGetters, mapActions } from "vuex";
 import Header from "../common/header";
 export default {
   components: {
     Header: Header
+  },
+  methods: {
+    ...mapActions(["setToken"])
+  },
+  mounted() {
+    this.setToken();
   }
 };
 </script>
