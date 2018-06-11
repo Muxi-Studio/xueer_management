@@ -54,11 +54,11 @@ export default {
     ...mapActions(["fetchCoursesList", "prePage", "nextPage", "deleteCourse"]),
     onEdit(e) {
       this.$router.push({ path: `/editcourse/${e.id}/` })
-      console.log(typeof(e.main_category));
     }
   },
   mounted() {
-    this.fetchCoursesList();
+    if (this.courses.length == 0)
+      this.fetchCoursesList();
   }
 };
 </script>
