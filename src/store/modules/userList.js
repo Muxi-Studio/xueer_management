@@ -31,7 +31,6 @@ const actions = {
     if (state.userpage < state.userTotalPages) {
       commit("setPage", state.userpage + 1);
       UserListService.getNextUsersList(state.userpage).then(res => {
-        console.log(res)
         commit("setUsers", res);
       });
     }
@@ -44,9 +43,12 @@ const actions = {
       });
     }
   },
-  deleteUser({ commit, state }, user) {
-    console.log(user.id);
-    UserListService.deleteUser(user.id, State.token)
+  deleteUser({ commit, state }, id) {
+    UserListService.deleteUser(id, State.token).then(res => {
+      UserListService.getNextUsersList(state.userpage).then(res => {
+        commit("setUsers", res);
+      });
+    })
   }
 };
 

@@ -18,7 +18,7 @@
     </div>
     <div class="add_item">
     学分类别：
-    <m-select v-model="type_id" :defaultvalue="defaultType">
+    <m-select v-model="type_id" :defaultvalue="defaultTypeId">
       <m-option v-for="item in type_options" :key="item.value" :label="item.label" :value="item.value">
       </m-option>
     </m-select>
@@ -38,6 +38,10 @@ import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
       return {
         id: this.$route.params.id,
         main_options: [
+          {
+            value: 0,
+            label: "无分类"
+          },
           {
             value: 1,
             label:"公共课"
@@ -153,7 +157,7 @@ import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
             return e.value == this.sub_category
         }).label
       },
-      defaultType: function() {
+      defaultTypeId: function() {
         return this.type_options.find((e)=>{
             return e.value == this.type_id
         }).label

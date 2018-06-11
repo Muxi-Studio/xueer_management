@@ -11,9 +11,11 @@
         </m-table-col>
         <m-table-col label="操作" prop="active" width="15%">
           <template slot-scope="row">
-            <span v-on:click="deleteUser.bind(this, row)">
+            <div>
+              <span @click="onDelete(row)">
               <i class="material-icons material-icons-light delete">delete_sweep</i>
             </span>
+            </div>
           </template>
         </m-table-col>
       </m-table>
@@ -40,6 +42,9 @@ export default {
   },
   methods: {
     ...mapActions(["fetchUsersList", "preUserPage", "nextUserPage", "deleteUser"]),
+    onDelete(e) {
+      this.deleteUser(e.id)
+    }
   },
   mounted() {
     this.fetchUsersList();
