@@ -2,40 +2,24 @@ import UserListService from "../../service/user";
 import { statSync } from "fs";
 import State from "../state";
 
-// params hepler
-function getQueryParams(state) {
-  let mainCatKey;
-  let obj = {
-    page: state.page,
-    sort: state.sort,
-    pre_page: state.pre_page
-  };
-  if (state.catgories.length >= 0) {
-    state.catgories.forEach(item => {
-      obj[item] = 1;
-    });
-  }
-  return obj;
-}
-
 const state = {
   users: [],
-  totalPages: 0,
-  page: 1,
-  sort: "view",
+  userTotalPages: 0,
+  userpage: 1,
   pre_page: 20,
 };
 
 const getters = {
   users: () => state.users,
-  page: () => state.page,
-  totalPages: () => state.totalPages
+  userpage: () => state.userpage,
+  userTotalPages: () => state.userTotalPages
 };
 
 const actions = {
+  // 第一次加载
   fetchUsersList({ commit, state }) {
     commit("reset");
-    UserListService.getUsersList(getQueryParams(state)).then(({ json, headers }) => {
+    UserListService.getUsersList().then(({ json, headers }) => {
       let totalPages = Number(
         /page=([0-9]+)/.exec(headers[0].split(";")[1])[1]
       );
@@ -43,25 +27,28 @@ const actions = {
       commit("setListMetaData", totalPages);
     });
   },
-  nextPage({ commit, state }) {
-    if (state.page <= state.totalPages) {
-      commit("setPage", state.page + 1);
-      UserListService.getNextUsersList(getQueryParams(state)).then(res => {
+  nextUserPage({ commit, state }) {
+    if (state.userpage < state.userTotalPages) {
+      commit("setPage", state.userpage + 1);
+      UserListService.getNextUsersList(state.userpage).then(res => {
         commit("setUsers", res);
       });
     }
   },
-  prePage({ commit, state }) {
-    if (state.page > 1) {
-      commit("setPage", state.page - 1);
-      UserListService.getNextUsersList(getQueryParams(state)).then(res => {
+  preUserPage({ commit, state }) {
+    if (state.userpage > 1) {
+      commit("setPage", state.userpage - 1);
+      UserListService.getNextUsersList(state.userpage).then(res => {
         commit("setUsers", res);
       });
     }
   },
-  deleteUser({ commit, state }, user) {
-    console.log(user.id);
-    UserListService.deletUser(user.id, State.token)
+  deleteUser({ commit, state }, id) {
+    UserListService.deleteUser(id, State.token).then(res => {
+      UserListService.getNextUsersList(state.userpage).then(res => {
+        commit("setUsers", res);
+      });
+    })
   }
 };
 
@@ -70,14 +57,10 @@ const mutations = {
     state.users = users
   },
   setPage(state, page) {
-    state.page = page;
-  },
-  reset(state) {
-    state.page = 1;
-    state.users = [];
+    state.userpage = page;
   },
   setListMetaData(state, total) {
-    state.totalPages = total;
+    state.userTotalPages = total;
   }
 };
 export default {

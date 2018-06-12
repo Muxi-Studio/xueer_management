@@ -18,7 +18,7 @@ let CourseService = {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": "Basic " + btoa(token + ":")
+        "Authorization": "Basic " + token
       }
     })
   },

@@ -25,7 +25,6 @@
               <i class="material-icons material-icons-light edit">edit</i>
             </span>
            </div>
-           <!-- <m-button @click="deleteCourse.bind(this, row)">Delete</m-button> -->
           </template>
         </m-table-col>
       </m-table>
@@ -55,11 +54,11 @@ export default {
     ...mapActions(["fetchCoursesList", "prePage", "nextPage", "deleteCourse"]),
     onEdit(e) {
       this.$router.push({ path: `/editcourse/${e.id}/` })
-      console.log(e);
     }
   },
   mounted() {
-    this.fetchCoursesList();
+    if (this.courses.length == 0)
+      this.fetchCoursesList();
   }
 };
 </script>
