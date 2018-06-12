@@ -64,23 +64,26 @@ export default {
     Pagiantion: Pagiantion
   },
   methods: {
-    ...mapActions(["setKeyWord", "searchCourse", "searchNextCourse", "searchPreCourse"]),
-    toSearch: function () {
+    ...mapActions(["setKeyWord", "searchCourse", "searchNextCourse", "searchPreCourse", "deleteCourse"]),
+    toSearch() {
       if (this.key_word) {
         this.setKeyWord(this.key_word)
         this.searchCourse();
         this.key_word = "";
       }
     },
-    nextPage: function() {
+    nextPage() {
       if (this.page < this.totalPages) {
         this.searchNextCourse();
       }
     },
-    prePage: function() {
+    prePage() {
       if (this.page > 1) {
         this.searchPreCourse();
       }
+    },
+    onEdit(e) {
+      this.$router.push({ path: `/editcourse/${e.id}/` })
     }
   }
 }
