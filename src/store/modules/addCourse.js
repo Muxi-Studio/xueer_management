@@ -51,7 +51,8 @@ const actions = {
     if (state.course.type_id != "0" ) course_info.type_id = parseInt(state.course.type_id);
 
     CourseService.addCourse(course_info, State.token).then(res => {
-      window.locaition.href = "/list"
+      // window.locaition.href = "/list"
+      console.log("success")
     })
   },
   getCourse({ state, commit }, id) {

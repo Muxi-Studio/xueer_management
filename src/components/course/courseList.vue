@@ -18,7 +18,7 @@
         <m-table-col label="操作" prop="active" width="10%">
           <template slot-scope="row">
            <div>
-             <span @click="deleteCourse(row)">
+             <span @click="deleteCourse(row.id)">
               <i class="material-icons material-icons-light delete">delete_sweep</i>
             </span>
             <span @click="onEdit(row)">

@@ -61,7 +61,8 @@ const actions = {
     }
   },
   deleteCourse({ commit, state }, id) {
-    CourseListService.deletCourse(id, State.token)
+    console.log(State.token)
+    // CourseListService.deletCourse(id, State.token)
   }
 };
 
