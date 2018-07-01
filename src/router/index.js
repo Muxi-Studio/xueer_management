@@ -67,7 +67,7 @@ export default new Router({
       ]
     },
     {
-      name: "article",
+      // name: "article",
       path: "/article",
       component: Article,
       children: [

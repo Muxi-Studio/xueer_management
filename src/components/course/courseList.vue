@@ -48,7 +48,7 @@ export default {
       courses: state => state.courseList.courses,
       page: state => state.courseList.page,
       totalPages: state => state.courseList.totalPages
-    })
+      })
   },
   methods: {
     ...mapActions(["fetchCoursesList", "prePage", "nextPage", "deleteCourse"]),

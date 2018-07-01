@@ -50,8 +50,9 @@ const actions = {
     if (state.course.sub_category != "0" ) course_info.sub_category_id = parseInt(state.course.sub_category);
     if (state.course.type_id != "0" ) course_info.type_id = parseInt(state.course.type_id);
 
+    console.log(course_info)
     CourseService.addCourse(course_info, State.token).then(res => {
-      // window.locaition.href = "/list"
+      commit("reset");
       console.log("success")
     })
   },
@@ -83,7 +84,6 @@ const mutations = {
     state.course.sub_category = state.sub_category_map[json.sub_category];
     state.course.type_id = state.type_map[json.credit_category];
     state.course.available = (json.available == true) ? "true" : "false"
-    // console.log(state.course)
   },
   reset(state) {
     state.course.name = "";

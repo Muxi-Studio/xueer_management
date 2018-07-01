@@ -24,7 +24,7 @@ const state = {
   page: 1,
   sort: "view",
   pre_page: 20,
-  catgories: [],
+  catgories: []
 };
 
 const getters = {
@@ -61,8 +61,11 @@ const actions = {
     }
   },
   deleteCourse({ commit, state }, id) {
-    console.log(State.token)
-    // CourseListService.deletCourse(id, State.token)
+    CourseListService.deletCourse(id, State.token).then(res => {
+      CourseListService.getNextCoursesList(getQueryParams(state)).then(res => {
+        commit("setCourses", res);
+      });
+    })
   }
 };
 
