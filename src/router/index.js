@@ -24,12 +24,13 @@ export default new Router({
       component: Landing
     },
     {
-      name: "course",
+      // name: "course",
       path: "/",
       component: Course,
       children: [
         {
-          path: "list",
+          // path: "list",
+          path: "/",
           component: CourseList
         },
         {
@@ -52,12 +53,13 @@ export default new Router({
       component: CommentList
     },
     {
-      name: "user",
+      // name: "user",
       path: "/user",
       component: User,
       children: [
         {
-          path: "list",
+          // path: "list",
+          path: "/",
           component: UserList
         },
         {
@@ -72,11 +74,15 @@ export default new Router({
       component: Article,
       children: [
         {
-          path: "list",
+          path: "/",
           component: ArticleList
         },
         {
           path: "add",
+          component: AddArticle
+        },
+        {
+          path: "edit/:id",
           component: AddArticle
         }
       ]

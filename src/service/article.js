@@ -1,23 +1,15 @@
 import Fetch from "./fetch.js";
 
 let ArticleService = {
-  getArticlesList(token) {
+  getArticlesList() {
     return Fetch("/api/v1.0/tips/", {
       method: "GET",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
       responseHeaders: ["link"]
     });
   },
-  getNextArticlesList(page, token) {
+  getNextArticlesList(page) {
     return Fetch("/api/v1.0/tips/?page=" + page, {
-      method: "GET",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
+      method: "GET"
     });
   },
   deleteArticle(id, token) {

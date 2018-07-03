@@ -18,7 +18,6 @@ const getters = {
 const actions = {
   // 第一次加载
   fetchCommentsList({ commit, state }) {
-    commit("reset");
     CommentListService.getCommentsList(State.token).then(({ json, headers }) => {
       let totalPages = Number(
         /page=([0-9]+)/.exec(headers[0].split(";")[1])[1]

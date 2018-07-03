@@ -18,7 +18,7 @@ const getters = {
 const actions = {
   // 第一次加载
   fetchUsersList({ commit, state }) {
-    commit("reset");
+    // commit("reset");
     UserListService.getUsersList().then(({ json, headers }) => {
       let totalPages = Number(
         /page=([0-9]+)/.exec(headers[0].split(";")[1])[1]

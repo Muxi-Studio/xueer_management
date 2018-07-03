@@ -1,13 +1,15 @@
 <template>
   <div class="list">
-      <m-table :data="tips">
+      <m-table :data="articles">
         <m-table-col prop="id" label="id" width="10%">
         </m-table-col>
         <m-table-col prop="title" label="文章名" width="50%">
         </m-table-col>
         <m-table-col prop="likes" label="点赞数" width="10%">
         </m-table-col>
-        <m-table-col label="操作" prop="active" width="30%">
+        <m-table-col prop="views" label="浏览量" width="10%">
+        </m-table-col>
+        <m-table-col label="操作" prop="active" width="20%">
           <template slot-scope="row">
            <div>
              <span @click="deleteTip(row.id)">
@@ -45,7 +47,7 @@ export default {
   methods: {
     ...mapActions(["fetchArticlesList", "preArticlePage", "nextArticlePage", "deleteArticle"]),
     onEdit(e) {
-      this.$router.push({ path: `/edit/${e.id}/` })
+      this.$router.push({ path: `/article/edit/${e.id}/` })
     }
   },
   mounted() {

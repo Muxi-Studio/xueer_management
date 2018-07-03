@@ -17,8 +17,7 @@ const getters = {
 
 const actions = {
   fetchArticlesList({ commit, state }) {
-    commit("reset");
-    ArticleListService.getArticlesList(getQueryParams(state)).then(({ json, headers }) => {
+    ArticleListService.getArticlesList().then(({ json, headers }) => {
       let totalPages = Number(
         /page=([0-9]+)/.exec(headers[0].split(";")[1])[1]
       );
@@ -29,7 +28,7 @@ const actions = {
   nextPage({ commit, state }) {
     if (state.articlepage <= state.articleTotalPages) {
       commit("setPage", state.page + 1);
-      ArticleListService.getNextArticlesList(getQueryParams(state)).then(res => {
+      ArticleListService.getNextArticlesList(state.articlepage, State.token).then(res => {
         commit("setArticles", res);
       });
     }
@@ -37,14 +36,14 @@ const actions = {
   prePage({ commit, state }) {
     if (state.articlepage > 1) {
       commit("setPage", state.articlepage - 1);
-      ArticleListService.getNextArticlesList(getQueryParams(state)).then(res => {
+      ArticleListService.getNextArticlesList(state.articlepage, State.token).then(res => {
         commit("setArticles", res);
       });
     }
   },
   deleteArticle({ commit, state }, id) {
     ArticleListService.deletArticle(id, State.token).then(res => {
-      ArticleListService.getNextArticlesList(getQueryParams(state)).then(res => {
+      ArticleListService.getNextArticlesList(state.articlepage, State.token).then(res => {
         commit("setArticles", res);
       });
     })
@@ -57,10 +56,6 @@ const mutations = {
   },
   setPage(state, page) {
     state.articlepage = page;
-  },
-  reset(state) {
-    state.articlepage = 1;
-    state.articles = [];
   },
   setListMetaData(state, total) {
     state.articleTotalPages = total;

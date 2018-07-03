@@ -50,10 +50,8 @@ const actions = {
     if (state.course.sub_category != "0" ) course_info.sub_category_id = parseInt(state.course.sub_category);
     if (state.course.type_id != "0" ) course_info.type_id = parseInt(state.course.type_id);
 
-    console.log(course_info)
     CourseService.addCourse(course_info, State.token).then(res => {
       commit("reset");
-      console.log("success")
     })
   },
   getCourse({ state, commit }, id) {
