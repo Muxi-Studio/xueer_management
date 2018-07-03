@@ -29,6 +29,22 @@ let UserService = {
         "Authorization": "Basic " + token
       }
     })
+  },
+  getUser(id) {
+    return Fetch("/api/v1.0/users/" + id + "/", {
+      method: "GET"
+    })
+  },
+  updateUser(id, info, token) {
+    return Fetch("/api/v1.0/users/" + id + "/", {
+      method: "PUT",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Basic " + token
+      },
+      data: info
+    })
   }
 }
 

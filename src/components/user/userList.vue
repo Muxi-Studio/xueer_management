@@ -15,6 +15,9 @@
               <span @click="onDelete(row)">
               <i class="material-icons material-icons-light delete">delete_sweep</i>
             </span>
+            <span @click="onEdit(row)">
+              <i class="material-icons material-icons-light edit">edit</i>
+            </span>
             </div>
           </template>
         </m-table-col>
@@ -44,6 +47,9 @@ export default {
     ...mapActions(["fetchUsersList", "preUserPage", "nextUserPage", "deleteUser"]),
     onDelete(e) {
       this.deleteUser(e.id)
+    },
+    onEdit(e) {
+      this.$router.push({ path: `/user/admin/${e.id}/` })
     }
   },
   mounted() {

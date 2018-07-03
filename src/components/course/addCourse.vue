@@ -1,5 +1,5 @@
 <template>
-  <div class="add_course">
+  <div class="add_container">
     <m-input placeholder="课程名" label="课程名" v-model="name" class="add_item"></m-input>
     <m-input placeholder="教师" label="教师" v-model="teacher" class="add_item"></m-input>
     <div class="add_item">
@@ -182,13 +182,4 @@ import { mapState, mapMutations, mapGetters, mapActions} from 'vuex';
 </script>
 <style lang="scss">
 @import "../../assets/utility.scss";
-.add_course {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.add_item {
-  margin-bottom: 20px;
-  text-align: left;
-}
 </style>
