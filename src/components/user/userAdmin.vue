@@ -20,10 +20,10 @@ export default {
     return {
       id: this.$route.params.id,
       roles: [
-        {
-          value: 0,
-          label: "无"
-        },
+        // {
+        //   value: 0,
+        //   label: "无"
+        // },
         {
           value: 1,
           label: "运营"

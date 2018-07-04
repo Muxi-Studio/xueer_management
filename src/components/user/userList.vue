@@ -7,7 +7,9 @@
         </m-table-col>
         <m-table-col prop="email" label="邮箱" width="30%">
         </m-table-col>
-        <m-table-col prop="valid_recommend_count" label="有效推荐数" width="25%">
+        <m-table-col prop="valid_recommend_count" label="有效推荐数" width="10%">
+        </m-table-col>
+        <m-table-col prop="role_id" label="权限" width="15%">
         </m-table-col>
         <m-table-col label="操作" prop="active" width="15%">
           <template slot-scope="row">

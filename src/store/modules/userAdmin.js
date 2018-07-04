@@ -17,7 +17,8 @@ const getters = {
 
 const actions = {
   getUser({ state, commit }, id) {
-    commit("setUserID", id)
+    commit("resetUser");
+    commit("setUserID", id);
     UserService.getUser(id).then(json => {
       commit("setUser", json)
     })
@@ -42,10 +43,11 @@ const mutations = {
   },
   setUser(state, json) {
     state.user.username = json.username;
-    state.user.role = 0;
+    state.user.role_id = json.role_id;
   },
-  reset(state) {
+  resetUser(state) {
     state.user.username = "";
+    state.user.role_id = 3;
   },
   updateUsername(state, value) {
     state.user.username = value;
