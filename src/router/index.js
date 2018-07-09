@@ -24,8 +24,12 @@ export default new Router({
       component: Landing
     },
     {
-      // name: "course",
       path: "/",
+      redirect: "/list"
+    },
+    {
+      // name: "course",
+      path: "/list",
       component: Course,
       children: [
         {

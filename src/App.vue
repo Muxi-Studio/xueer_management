@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="navi_link">
-        <router-link to="/">
+        <router-link to="/list">
         <div class="navi_item flex_center">
           <i class="material-icons">library_books</i>
           <!-- <i class="item_eng"></i> -->
@@ -114,5 +114,11 @@ export default {
   flex: 1;
   min-width: 700px;
   overflow: scroll;
+}
+
+.router-link-active {
+  .navi_item {
+    background-color: rgb(20, 176, 202);
+  }
 }
 </style>
