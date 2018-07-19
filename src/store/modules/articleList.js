@@ -25,7 +25,7 @@ const actions = {
       commit("setListMetaData", totalPages);
     });
   },
-  nextPage({ commit, state }) {
+  nextArticlePage({ commit, state }) {
     if (state.articlepage <= state.articleTotalPages) {
       commit("setPage", state.page + 1);
       ArticleListService.getNextArticlesList(state.articlepage, State.token).then(res => {
@@ -33,7 +33,7 @@ const actions = {
       });
     }
   },
-  prePage({ commit, state }) {
+  preArticlePage({ commit, state }) {
     if (state.articlepage > 1) {
       commit("setPage", state.articlepage - 1);
       ArticleListService.getNextArticlesList(state.articlepage, State.token).then(res => {

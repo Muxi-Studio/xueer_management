@@ -28,7 +28,7 @@
           </template>
         </m-table-col>
       </m-table>
-      <Pagiantion :page="page" :totalPages="totalPages" v-on:prePage="prePage" v-on:nextPage="nextPage"></Pagiantion>
+      <Pagiantion :page="page" :totalPages="totalPages" v-on:prePage="preCoursePage" v-on:nextPage="nextCoursePage"></Pagiantion>
   </div>
 </template>
 
@@ -51,9 +51,9 @@ export default {
       })
   },
   methods: {
-    ...mapActions(["fetchCoursesList", "prePage", "nextPage", "deleteCourse"]),
+    ...mapActions(["fetchCoursesList", "preCoursePage", "nextCoursePage", "deleteCourse"]),
     onEdit(e) {
-      this.$router.push({ path: `/editcourse/${e.id}/` })
+      this.$router.push({ path: `/list/editcourse/${e.id}/` })
     }
   },
   mounted() {

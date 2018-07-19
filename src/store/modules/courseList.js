@@ -44,15 +44,17 @@ const actions = {
       commit("setListMetaData", totalPages);
     });
   },
-  nextPage({ commit, state }) {
+  nextCoursePage({ commit, state }) {
     if (state.page <= state.totalPages) {
+      console.log(state.page)
       commit("setPage", state.page + 1);
+      console.log(state.page)
       CourseListService.getNextCoursesList(getQueryParams(state)).then(res => {
         commit("setCourses", res);
       });
     }
   },
-  prePage({ commit, state }) {
+  preCoursePage({ commit, state }) {
     if (state.page > 1) {
       commit("setPage", state.page - 1);
       CourseListService.getNextCoursesList(getQueryParams(state)).then(res => {
