@@ -13,8 +13,7 @@ let SignService = {
     });
   },
   getToken(email) {
-    return Fetch("https://xueer.muxixyz.com/api/v1.0/token/", {
-    // return Fetch("/api/v1.0/token/", {
+    return Fetch("/api/v1.0/token/", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -29,7 +28,6 @@ let SignService = {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: "Basic ZXlKcFpDSTZNVEY5LlljM0pTbElmRktPd0tKY3g0QXZwX2Y0bEZvUTo=" // btoa(管理员token)
       },
       data: {
         username: decodeURIComponent(username),

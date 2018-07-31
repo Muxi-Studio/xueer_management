@@ -44,8 +44,7 @@ function checkCookie(val) {
 function getToken() {
   var auth = {};
   if (cookie.getCookie("token")) {
-    var token = btoa(cookie.getCookie("token") + ":");
-    //var token = cookie.getCookie("token");
+    var token = btoa(cookie.getCookie("xueer_token") + ":");
     var auth = { Authorization: "Basic " + token };
   }
   return auth;

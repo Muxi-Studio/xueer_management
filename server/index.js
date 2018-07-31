@@ -13,30 +13,27 @@ const templateRoot = path.join(__dirname, "../dist/")
 app.use(userAgent);
 app.use(bodyParser());
 
-router.get(/^\/static(?:\/|$)/, async(ctx) => {
-    let filePath = ctx.path.replace(/static\//, "")
-     await send(ctx, filePath, {
-         root: path.join(__dirname, "../dist/static")
+router.get(/^\/webadmin\/static(?:\/|$)/, async(ctx) => {
+    console.log(ctx.path)
+     await send(ctx, ctx.path, {
+         root: path.join(__dirname, "../dist")
      });
 })
 
 
-router.get("/", function(ctx, next){
-    if (ctx.cookies.get("token")) {
-        let template = swig.compileFile(path.resolve(templateRoot, "index.html"));
-        ctx.body = template({});
-    } else {
-        // for develop
-        ctx.redirect("https://user.muxixyz.com/?landing=localhost:3000/landing")
-        // for production
-        // ctx.redirect("https://user.muxixyz.com/?landing=xxx/landing")
-    }
-});
+// router.get("", function(ctx, next){
+//     if (ctx.cookies.get("xueer_token")) {
+//         let template = swig.compileFile(path.resolve(templateRoot, "index.html"));
+//         ctx.body = template({});
+//     } else {
+//         // for develop
+//         ctx.redirect("https://user.muxixyz.com/?landing=localhost:3000/landing")
+//         // for production
+//         // ctx.redirect("https://user.muxixyz.com/?landing=xueer.muxixyz.com/webadmin/landing")
+//     }
+// });
 
-router.get(/^\/(.*)$/, function(ctx, next){
-    ctx.cookies.set("landing", ctx.request.query.landing, {
-        httpOnly: false,
-    })
+router.get(/^\/webadmin\/(.*)$/, function(ctx, next){
     let template = swig.compileFile(path.resolve(templateRoot, "index.html"));
     ctx.body = template({});
 });

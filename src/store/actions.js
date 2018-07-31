@@ -26,17 +26,9 @@ const actions = {
     });
   },
   setToken({ state, commit }) {
-    /* for development
-     开发时Cookie.getCookie("token")为空
-    */
-    if (state.token !== "") {
-      commit("isLogin");
-    }
-    /** for production
     let token = Cookie.getCookie("token");
     commit("setToken", token);
     commit("isLogin");
-    */
   }
 };
 

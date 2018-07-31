@@ -54,8 +54,8 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsSubDirectory: 'webadmin/static',
+    assetsPublicPath: '/', // if using CDN, paste CDN domain here
 
     /**
      * Source Maps

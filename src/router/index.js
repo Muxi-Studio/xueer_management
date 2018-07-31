@@ -16,7 +16,7 @@ import Landing from "../components/common/landing";
 Vue.use(Router);
 export default new Router({
   mode: "history",
-  base: __dirname,
+  base: "/webadmin",
   routes: [
     {
       name: "landing",

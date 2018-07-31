@@ -1,5 +1,5 @@
 const state = {
-  token: "ZXlKcFpDSTZNVEY5LlljM0pTbElmRktPd0tKY3g0QXZwX2Y0bEZvUTo=",
+  token: "",
   is_admin: false, // 管理员
   is_operator: false, // 运营
   is_user: false, // 普通用户
