@@ -16,6 +16,14 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "busboy": "^0.2.14",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.0",
+    "koa-send": "^4.1.0",
+    "koa-static": "^4.0.1",
+    "koa-useragent": "^1.0.0",
+    "swig": "^1.4.2",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
