@@ -7,7 +7,7 @@ import SearchCourse from "../components/course/searchCourse";
 import CommentList from "../components/comment/CommentList";
 import User from "../components/user/user";
 import UserList from "../components/user/userList";
-import UserAdmin from "../components/user/UserAdmin";
+import UserAdmin from "../components/user/userAdmin";
 import Article from "../components/article/article";
 import AddArticle from "../components/article/addArticle";
 import ArticleList from "../components/article/articleList";
