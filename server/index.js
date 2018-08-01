@@ -14,7 +14,7 @@ app.use(userAgent);
 app.use(bodyParser());
 
 app.use(async (ctx, next) => {
-  if (ctx.cookies.get("xueer_token")) {
+  if (ctx.cookies.get("xueer_token") || /landing/.test(ctx.path)) {
     await next();
   } else {
     // for develop
