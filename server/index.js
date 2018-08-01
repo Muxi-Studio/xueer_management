@@ -14,11 +14,11 @@ app.use(userAgent);
 app.use(bodyParser());
 
 app.use(async (ctx, next) => {
-  if (ctx.cookies.get("xueer_token") || /landing/.test(ctx.path)) {
+  if (ctx.cookies.get("xueer_token") || /(static|landing)/.test(ctx.path)) {
     await next();
   } else {
     // for develop
-    // ctx.redirect("https://user.muxixyz.com/?landing=localhost:3000/landing")
+    // ctx.redirect("https://user.muxixyz.com/?landing=localhost:3000/webadmin/landing")
     // for production
     ctx.redirect(
       "https://user.muxixyz.com/?landing=xueer.muxixyz.com/webadmin/landing"
