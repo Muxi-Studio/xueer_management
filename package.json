@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "marked": "^0.5.1",
     "muxiui": "0.1.0-beta2",
     "simditor": "^2.3.6",
     "vue": "^2.5.2",

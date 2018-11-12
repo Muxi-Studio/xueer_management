@@ -18,11 +18,11 @@ app.use(async (ctx, next) => {
     await next();
   } else {
     // for develop
-    // ctx.redirect("https://user.muxixyz.com/?landing=localhost:3000/webadmin/landing")
+    ctx.redirect("https://user.muxixyz.com/?landing=localhost:3000/webadmin/landing")
     // for production
-    ctx.redirect(
-      "https://user.muxixyz.com/?landing=xueer.muxixyz.com/webadmin/landing"
-    );
+    // ctx.redirect(
+    //   "https://user.muxixyz.com/?landing=xueer.muxixyz.com/webadmin/landing"
+    // );
   }
 });
 
